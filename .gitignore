@@ -248,6 +248,7 @@ server/migrations
 # development
 /server/dev
 /dev/seed.py
+/dev/seedAPI.js
 
 # production
 /build
