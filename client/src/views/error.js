@@ -18,19 +18,21 @@ const Error = () => {
           width: "500px",
           height: "200px",
           padding: "2rem",
-          border: "1px solid #dae3e5",
+          color: "white",
+          // border: "1px solid #dae3e5",
           borderRadius: ".5rem",
-          background: "rgba(255, 255, 255, 0.2)",
+          background: "rgba(255, 255, 255, 0.4)",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-evenly",
+          justifyContent: "space-around",
           flexDirection: "column",
         }}
       >
         <h1>404 - Page Not Found</h1>
+        <hr style={{ width: "100px" }} />
         <NavLink to={"/"}>
           <ColorButtonSolid size="small" variant="outlined">
-            Home
+            Fantasy Eleven
           </ColorButtonSolid>
         </NavLink>
       </div>

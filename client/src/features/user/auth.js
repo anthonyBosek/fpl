@@ -60,12 +60,10 @@ const Authentication = () => {
   const handleFormSubmit = async (values) => {
     const action = await dispatch(fetchRegister({ url, values }));
     if (typeof action.payload !== "string") {
-      // console.log("action.payload", action.payload);
       const username = action.payload.user
         ? action.payload.user.username
         : action.payload.username;
       toast.success(`Welcome ${username}!`);
-      // console.log("action.payload", action.payload);
     } else {
       toast.error(action.payload);
     }
@@ -99,7 +97,6 @@ const Authentication = () => {
               handleBlur,
               handleChange,
               handleSubmit,
-              resetForm,
             }) => (
               <Box
                 component="form"
@@ -180,7 +177,12 @@ const Authentication = () => {
                   type="submit"
                   fullWidth
                   variant="contained"
-                  sx={{ mt: 3, mb: 2 }}
+                  sx={{
+                    mt: 3,
+                    mb: 2,
+                    backgroundColor: "#452864",
+                    "&:hover": { backgroundColor: "#381d54" },
+                  }}
                 >
                   {isReg ? "Sign Up" : "Sign In"}
                 </Button>

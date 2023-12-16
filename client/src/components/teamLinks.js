@@ -2,7 +2,7 @@ import { PL_TEAMS } from "../assets/data/pl";
 
 const links = PL_TEAMS.map(({ team }) => (
   <li key={`team-link-${team.name}`}>
-    <a href={team.zine} target="_blank">
+    <a href={team.zine} rel="noreferrer" target="_blank">
       <img className="team-link" src={team.logo} alt="logo" />
     </a>
   </li>

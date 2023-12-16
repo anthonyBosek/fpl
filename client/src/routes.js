@@ -1,6 +1,8 @@
 import App from "./App";
 import Error from "./views/error";
 import Home from "./views/home";
+import Authentication from "./features/user/auth";
+import Dashboard from "./views/dashboard";
 
 const routes = [
   {
@@ -13,10 +15,10 @@ const routes = [
         index: true,
         element: <Home />,
       },
-      //   {
-      //     path: "/auth",
-      //     element: <Authentication />,
-      //   },
+      {
+        path: "/auth",
+        element: <Authentication />,
+      },
       //   {
       //     path: "/premier-league",
       //     element: <PremierLeague />,
@@ -25,10 +27,10 @@ const routes = [
       //     path: "/fantasy",
       //     element: <Fantasy />,
       //   },
-      //   {
-      //     path: "/users/:id/dashboard",
-      //     element: <Dashboard />,
-      //   },
+      {
+        path: "/users/:id/dashboard",
+        element: <Dashboard />,
+      },
       //   {
       //     path: "/leagues/new",
       //     element: <LeagueForm />,

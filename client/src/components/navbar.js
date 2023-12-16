@@ -33,7 +33,7 @@ const Nav = () => {
     <nav>
       <div className="nav-box">
         <div className="nav-links">
-          <NavLink to="/">Home</NavLink>
+          {/* <NavLink to="/">Home</NavLink> */}
           <NavLink to="/premier-league">Premier League</NavLink>
           <NavLink to="/fantasy">Fantasy</NavLink>
           {user && (

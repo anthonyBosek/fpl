@@ -1,0 +1,13 @@
+#auth {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  font-family: "Oswald", sans-serif;
+  min-height: calc(100vh - 164px);
+}
+
+.auth-logo {
+  height: 70px;
+  width: 70px;
+  margin-bottom: 6px;
+}
