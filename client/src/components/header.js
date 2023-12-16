@@ -1,7 +1,7 @@
 import "../styles/header.css";
 import logo from "../assets/images/logo.png";
-import TeamLinks from "./teamLinks";
 import { Link } from "react-router-dom";
+import ClubLinks from "./clubLinks";
 
 const Header = () => {
   return (
@@ -19,7 +19,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <TeamLinks />
+      <ClubLinks />
     </>
   );
 };

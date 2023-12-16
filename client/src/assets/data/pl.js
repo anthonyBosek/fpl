@@ -1,4 +1,4 @@
-export const PL_TEAMS = [
+export const PL_CLUBS = [
   {
     team: {
       id: 33,

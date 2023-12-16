@@ -39,7 +39,7 @@
   --second-txt-color: #757575;
   --search-bg-color: #fafafa;
 
-  background: var(--bg-color);
+  /* background: var(--bg-color); */
   color: var(--main-txt-color);
 }
 

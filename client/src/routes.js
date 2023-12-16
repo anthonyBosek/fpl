@@ -2,6 +2,7 @@ import App from "./App";
 import Error from "./views/error";
 import Home from "./views/home";
 import Authentication from "./features/user/auth";
+import PremierLeague from "./views/premierLeague";
 import Dashboard from "./views/dashboard";
 
 const routes = [
@@ -19,10 +20,10 @@ const routes = [
         path: "/auth",
         element: <Authentication />,
       },
-      //   {
-      //     path: "/premier-league",
-      //     element: <PremierLeague />,
-      //   },
+      {
+        path: "/premier-league",
+        element: <PremierLeague />,
+      },
       //   {
       //     path: "/fantasy",
       //     element: <Fantasy />,

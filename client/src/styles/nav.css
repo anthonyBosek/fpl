@@ -29,7 +29,7 @@ nav {
 }
 .nav-links a.active {
   color: #333333;
-  border-bottom: 2px solid #333;
+  border-bottom: 1px solid #333;
 }
 .nav-btns {
   width: 30%;
