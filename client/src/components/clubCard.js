@@ -9,7 +9,7 @@ import { CardActionArea } from "@mui/material";
 const ClubCard = ({ team, venue }) => {
   return (
     <Grid item xs={12} sm={4}>
-      <Card sx={{ display: "flex" }}>
+      <Card sx={{ display: "flex" }} onClick={() => console.log(team)}>
         <CardActionArea>
           <Box
             sx={{

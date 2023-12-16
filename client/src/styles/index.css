@@ -54,5 +54,14 @@
   color: var(--main-txt-color);
 }
 
+body {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
 .outlet-container {
+  padding-top: 160px;
 }

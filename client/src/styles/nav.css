@@ -1,6 +1,9 @@
 nav {
   clear: both;
   width: 100vw;
+  position: fixed;
+  margin-top: 120px;
+  z-index: 1;
   background-color: #f8f9fa;
   border-bottom: 1px solid #e9ecef;
   font-family: "Oswald", sans-serif;
