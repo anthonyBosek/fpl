@@ -16,7 +16,7 @@ export const PL_CLUBS = [
       city: "Manchester",
       capacity: 76212,
       image:
-        "https://lh3.googleusercontent.com/p/AF1QipMqwBEIKYlnLKvB6EMZcNrbAF79Q6pM5VqfLqFg=s1360-w1360-h1020",
+        "https://www.si.com/.image/t_share/MTkxMTk2ODg3MjA5MzU0NDc1/imago1011329909h.jpg",
     },
   },
   {
@@ -95,7 +95,8 @@ export const PL_CLUBS = [
       address: "Waterloo Road",
       city: "Wolverhampton, West Midlands",
       capacity: 34624,
-      image: "https://media-4.api-sports.io/football/venues/600.png",
+      image:
+        "https://lh3.googleusercontent.com/p/AF1QipP5lbvkdSzcUDBfiO_G4WwNBrZO93LSZysfcjNn=s1360-w1360-h1020",
     },
   },
   {
@@ -114,7 +115,9 @@ export const PL_CLUBS = [
       address: "Anfield Road",
       city: "Liverpool",
       capacity: 55212,
-      image: "https://media-4.api-sports.io/football/venues/550.png",
+      image:
+        "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/72000/72885-Anfield-Road-Stadium.jpg",
+      // "https://lh3.googleusercontent.com/p/AF1QipOlRxEEkH2V4Uy09PDqrZb_jPNnT-1sPXxep-3v=s1360-w1360-h1020",
     },
   },
   {
@@ -153,7 +156,8 @@ export const PL_CLUBS = [
       address: "Harry Potts Way",
       city: "Burnley",
       capacity: 22546,
-      image: "https://media-4.api-sports.io/football/venues/512.png",
+      image:
+        "https://lastwordonsports.com/football/wp-content/uploads/sites/4/2023/10/imago1035294777h-scaled.jpg",
     },
   },
   {
@@ -172,7 +176,8 @@ export const PL_CLUBS = [
       address: "Goodison Road",
       city: "Liverpool",
       capacity: 40569,
-      image: "https://media-4.api-sports.io/football/venues/8560.png",
+      image:
+        "https://footballgroundguide.com/wp-content/uploads/2023/03/Goodison-Park-Stadium-Football-Ground-Everton-FC-Stadium-3.jpg",
     },
   },
   {
@@ -192,7 +197,7 @@ export const PL_CLUBS = [
       city: "London",
       capacity: 62850,
       image:
-        "https://lh3.googleusercontent.com/p/AF1QipNIvSplNqB5kwfgP3PBlZS8d6NYO_uhGuRG1Zuo=s1360-w1360-h1020",
+        "https://i2-prod.football.london/incoming/article26640096.ece/ALTERNATES/s1200/1_GettyImages-1396908938.jpg",
     },
   },
   {
@@ -211,7 +216,7 @@ export const PL_CLUBS = [
       address: "Marshgate Lane, Stratford",
       city: "London",
       capacity: 62500,
-      image: "https://media-4.api-sports.io/football/venues/598.png",
+      image: "https://media.timeout.com/images/106071211/750/422/image.jpg",
     },
   },
   {
@@ -230,7 +235,8 @@ export const PL_CLUBS = [
       address: "Fulham Road",
       city: "London",
       capacity: 41841,
-      image: "https://media-4.api-sports.io/football/venues/519.png",
+      image:
+        "https://lh3.googleusercontent.com/p/AF1QipMod72Au9564B1Oyo5x239XOew2hcTpoGJ_hE7d=s1360-w1360-h1020",
     },
   },
   {
@@ -249,7 +255,8 @@ export const PL_CLUBS = [
       address: "Rowsley Street",
       city: "Manchester",
       capacity: 55097,
-      image: "https://media-4.api-sports.io/football/venues/555.png",
+      image:
+        "https://lh3.googleusercontent.com/p/AF1QipPiKVUimxe1oLY0DxC4MgrsQFq3shS8JsGvENVi=s1360-w1360-h1020",
     },
   },
   {
@@ -268,7 +275,8 @@ export const PL_CLUBS = [
       address: "Village Way",
       city: "Falmer, East Sussex",
       capacity: 31872,
-      image: "https://media-4.api-sports.io/football/venues/508.png",
+      image:
+        "https://resources.brightonandhovealbion.com/bhafc/photo/2021/03/06/7a779a6d-724d-48f0-8aa4-0079e92f3408/Brighton_-_Hove_Albion_v_West_Bromwich_Albion_26OCT20_PH.0004.JPG",
     },
   },
   {
@@ -287,7 +295,8 @@ export const PL_CLUBS = [
       address: "Holmesdale Road",
       city: "London",
       capacity: 26309,
-      image: "https://media-4.api-sports.io/football/venues/525.png",
+      image:
+        "https://cdn1.wearepalace.uk/uploads/28/2023/07/GettyImages-1248022087-scaled.jpg",
     },
   },
   {
@@ -326,7 +335,8 @@ export const PL_CLUBS = [
       address: "Bramall Lane",
       city: "Sheffield",
       capacity: 32702,
-      image: "https://media-4.api-sports.io/football/venues/581.png",
+      image:
+        "https://i2-prod.examinerlive.co.uk/incoming/article21599413.ece/ALTERNATES/s1200d/0_Bramall-Lane-pic.jpg",
     },
   },
   {
@@ -365,7 +375,8 @@ export const PL_CLUBS = [
       address: "Trinity Road",
       city: "Birmingham",
       capacity: 42788,
-      image: "https://media-4.api-sports.io/football/venues/495.png",
+      image:
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/b3/71/0b/villa-park.jpg?w=1200&h=-1&s=1",
     },
   },
   {

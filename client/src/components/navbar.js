@@ -2,7 +2,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { ColorButtonOutlined } from "../components/colorBtnOutline";
+import { ColorButtonOutlined } from "../components/styledComponents/colorBtnOutline";
 import { logout } from "../features/user/userSlice";
 import "../styles/nav.css";
 

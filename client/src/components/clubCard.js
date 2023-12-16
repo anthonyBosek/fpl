@@ -6,17 +6,17 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-const ClubCard = ({ team, venue }) => {
+const ClubCard = ({ team, venue, handleClubView }) => {
   return (
     <Grid item xs={12} sm={4}>
-      <Card sx={{ display: "flex" }} onClick={() => console.log(team)}>
+      <Card sx={{ display: "flex" }} onClick={() => handleClubView(team.id)}>
         <CardActionArea>
           <Box
             sx={{
               float: "right",
               position: "absolute",
-              right: 10,
-              top: 10,
+              right: 12,
+              top: 12,
             }}
           >
             <CardMedia

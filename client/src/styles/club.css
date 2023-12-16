@@ -1,0 +1,28 @@
+.club-view-img {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px #ccc, 0 0 10px #ccc, 0 0 15px #ccc;
+}
+.club-view-logo {
+  width: 100px;
+  position: relative;
+  top: 380px;
+  left: 20px;
+}
+.club-view-info {
+  clear: both;
+  margin-top: 44px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.club-view-name {
+  font-family: "Oswald", sans-serif;
+  font-size: 3rem;
+}
+.club-view-est {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+}

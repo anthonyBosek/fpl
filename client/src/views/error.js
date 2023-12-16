@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { ColorButtonSolid } from "../components/colorBtnSolid";
+import { ColorButtonSolid } from "../components/styledComponents/colorBtnSolid";
 import bg from "../assets/images/rainbow.webp";
 
 const Error = () => {
