@@ -15,7 +15,8 @@ export const PL_CLUBS = [
       address: "Sir Matt Busby Way",
       city: "Manchester",
       capacity: 76212,
-      image: "https://media-4.api-sports.io/football/venues/556.png",
+      image:
+        "https://lh3.googleusercontent.com/p/AF1QipMqwBEIKYlnLKvB6EMZcNrbAF79Q6pM5VqfLqFg=s1360-w1360-h1020",
     },
   },
   {
@@ -31,10 +32,11 @@ export const PL_CLUBS = [
     },
     venue: {
       name: "St. James' Park",
-      address: "St. James&apos; Street",
+      address: "St. James' Street",
       city: "Newcastle upon Tyne",
       capacity: 52758,
-      image: "https://media-4.api-sports.io/football/venues/562.png",
+      image:
+        "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fec6bd9ee-11f6-11ee-a92d-cf7c831c99b5.jpg?crop=8116%2C5411%2C0%2C0",
     },
   },
   {
@@ -53,7 +55,8 @@ export const PL_CLUBS = [
       address: "Dean Court, Kings Park",
       city: "Bournemouth, Dorset",
       capacity: 12000,
-      image: "https://media-4.api-sports.io/football/venues/504.png",
+      image:
+        "https://lh3.googleusercontent.com/p/AF1QipMzfI0-qkAq8tPXV0WDL5bExIFJMpcxYCmdPLQl=s1360-w1360-h1020",
     },
   },
   {
@@ -72,7 +75,8 @@ export const PL_CLUBS = [
       address: "Stevenage Road",
       city: "London",
       capacity: 25700,
-      image: "https://media-4.api-sports.io/football/venues/535.png",
+      image:
+        "https://lh3.googleusercontent.com/p/AF1QipO8pFOL9sbKeFVGce48bE1Xdl-fkudTPFMWyoWI=s1360-w1360-h1020",
     },
   },
   {
@@ -129,7 +133,8 @@ export const PL_CLUBS = [
       address: "Queensland Road",
       city: "London",
       capacity: 60383,
-      image: "https://media-4.api-sports.io/football/venues/494.png",
+      image:
+        "https://lh3.googleusercontent.com/p/AF1QipOJNAeBbI-NcTk8sOB11iCpTm5IDbvLgQAYwXEF=s1360-w1360-h1020",
     },
   },
   {
@@ -183,10 +188,11 @@ export const PL_CLUBS = [
     },
     venue: {
       name: "Tottenham Hotspur Stadium",
-      address: "Bill Nicholson Way, 748 High Road",
+      address: "748 High Road",
       city: "London",
       capacity: 62850,
-      image: "https://media-4.api-sports.io/football/venues/593.png",
+      image:
+        "https://lh3.googleusercontent.com/p/AF1QipNIvSplNqB5kwfgP3PBlZS8d6NYO_uhGuRG1Zuo=s1360-w1360-h1020",
     },
   },
   {
@@ -300,7 +306,8 @@ export const PL_CLUBS = [
       address: "166 Lionel Rd N, Brentford",
       city: "Brentford, Middlesex",
       capacity: 17250,
-      image: "https://media-4.api-sports.io/football/venues/10503.png",
+      image:
+        "https://lh3.googleusercontent.com/p/AF1QipN1ddganzFwyb-KNG0bbGoGo-aUJ2xrpLYAihxu=s1360-w1360-h1020",
     },
   },
   {
@@ -338,7 +345,8 @@ export const PL_CLUBS = [
       address: "Pavilion Road",
       city: "Nottingham, Nottinghamshire",
       capacity: 30576,
-      image: "https://media-4.api-sports.io/football/venues/566.png",
+      image:
+        "https://www.nottinghamforestevents.co.uk/media/1irlhgdr/homepage_image.jpg?width=735&height=559&quality=80&mode=crop",
     },
   },
   {
@@ -376,7 +384,8 @@ export const PL_CLUBS = [
       address: "1 Maple Road",
       city: "Luton, Bedfordshire",
       capacity: 11500,
-      image: "https://media-4.api-sports.io/football/venues/551.png",
+      image:
+        "https://ichef.bbci.co.uk/news/2048/cpsprodpb/2c5e/live/f07add00-090e-11ee-8970-191bc348c63e.jpg",
     },
   },
 ];

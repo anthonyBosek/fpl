@@ -47,14 +47,14 @@
   transform: rotate(45deg);
 }
 
-.team-links {
+.club-links {
   clear: both;
   width: 100vw;
   background-color: #f8f9fa;
   border-bottom: 1px solid #e9ecef;
   font-family: "Oswald", sans-serif;
 }
-.team-links-box {
+.club-links-box {
   max-width: 70%;
   height: 34px;
   margin: 0 auto;
@@ -63,9 +63,9 @@
   justify-content: space-between;
   list-style: none;
 }
-.team-link {
+.club-link {
   width: 30px;
 }
-.team-link:hover {
+.club-link:hover {
   transform: scale(1.1);
 }
