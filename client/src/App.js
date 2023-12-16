@@ -48,7 +48,9 @@ const App = () => {
       <Toaster />
       <Header />
       <Nav />
-      <Outlet />
+      <div className="outlet-container">
+        <Outlet />
+      </div>
     </>
   );
 };

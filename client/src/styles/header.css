@@ -13,11 +13,12 @@
   position: relative;
   z-index: 1;
 }
-.hdr-lt {
+.hdr-home {
   display: flex;
   align-items: center;
   margin-left: 60px;
   font-family: "Sriracha", cursive;
+  text-decoration: none;
 }
 .hdr-lt img {
   height: 70px;
@@ -44,4 +45,27 @@
   margin-left: -60px;
   background: #381d54;
   transform: rotate(45deg);
+}
+
+.team-links {
+  clear: both;
+  width: 100vw;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  font-family: "Oswald", sans-serif;
+}
+.team-links-box {
+  max-width: 70%;
+  height: 34px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+.team-link {
+  width: 30px;
+}
+.team-link:hover {
+  transform: scale(1.1);
 }

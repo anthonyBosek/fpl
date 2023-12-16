@@ -7,7 +7,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1878,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/33.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t1.png",
+      zine: "https://www.manutd.com/",
     },
     venue: {
       name: "Old Trafford",
@@ -25,7 +26,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1892,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/34.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t4.png",
+      zine: "https://www.nufc.co.uk/",
     },
     venue: {
       name: "St. James' Park",
@@ -43,7 +45,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1899,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/35.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t91.svg",
+      zine: "https://www.afcb.co.uk/",
     },
     venue: {
       name: "Vitality Stadium",
@@ -61,7 +64,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1879,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/36.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t54.svg",
+      zine: "https://www.fulhamfc.com/",
     },
     venue: {
       name: "Craven Cottage",
@@ -79,7 +83,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1877,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/39.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t39.svg",
+      zine: "https://www.wolves.co.uk/",
     },
     venue: {
       name: "Molineux Stadium",
@@ -97,7 +102,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1892,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/40.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t14.svg",
+      zine: "https://www.liverpoolfc.com/",
     },
     venue: {
       name: "Anfield",
@@ -115,7 +121,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1886,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/42.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t3.svg",
+      zine: "https://www.arsenal.com/",
     },
     venue: {
       name: "Emirates Stadium",
@@ -133,7 +140,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1882,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/44.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t90.svg",
+      zine: "https://www.burnleyfootballclub.com/",
     },
     venue: {
       name: "Turf Moor",
@@ -151,7 +159,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1878,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/45.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t11.svg",
+      zine: "https://www.evertonfc.com/",
     },
     venue: {
       name: "Goodison Park",
@@ -169,7 +178,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1882,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/47.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t6.svg",
+      zine: "https://www.tottenhamhotspur.com/",
     },
     venue: {
       name: "Tottenham Hotspur Stadium",
@@ -187,7 +197,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1895,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/48.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t21.svg",
+      zine: "https://www.whufc.com/",
     },
     venue: {
       name: "London Stadium",
@@ -205,7 +216,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1905,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/49.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t8.svg",
+      zine: "https://www.chelseafc.com/",
     },
     venue: {
       name: "Stamford Bridge",
@@ -223,7 +235,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1880,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/50.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t43.svg",
+      zine: "https://www.mancity.com/",
     },
     venue: {
       name: "Etihad Stadium",
@@ -241,7 +254,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1901,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/51.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t36.svg",
+      zine: "https://www.brightonandhovealbion.com/",
     },
     venue: {
       name: "The American Express Community Stadium",
@@ -259,7 +273,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1905,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/52.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t31.svg",
+      zine: "https://www.cpfc.co.uk/",
     },
     venue: {
       name: "Selhurst Park",
@@ -277,7 +292,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1889,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/55.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t94.svg",
+      zine: "https://www.brentfordfc.com/",
     },
     venue: {
       name: "Gtech Community Stadium",
@@ -295,7 +311,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1889,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/62.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t49.svg",
+      zine: "https://www.sufc.co.uk/",
     },
     venue: {
       name: "Bramall Lane",
@@ -313,7 +330,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1865,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/65.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t17.svg",
+      zine: "https://www.nottinghamforest.co.uk/",
     },
     venue: {
       name: "The City Ground",
@@ -331,7 +349,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1874,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/66.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t7.svg",
+      zine: "https://www.avfc.co.uk/",
     },
     venue: {
       name: "Villa Park",
@@ -349,7 +368,8 @@ export const PL_TEAMS = [
       country: "England",
       founded: 1885,
       national: false,
-      logo: "https://media-4.api-sports.io/football/teams/1359.png",
+      logo: "https://resources.premierleague.com/premierleague/badges/rb/t102.svg",
+      zine: "https://www.lutontown.co.uk/",
     },
     venue: {
       name: "Kenilworth Road",

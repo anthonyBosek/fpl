@@ -33,6 +33,7 @@ nav {
 }
 .nav-btns {
   width: 30%;
+  margin: 0 3rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;

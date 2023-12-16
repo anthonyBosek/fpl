@@ -8,6 +8,7 @@
 }
 
 :root {
+  /* --light-grey: #e1e7e9; */
   --light-grey: #dae3e5;
   --dark-grey: #393d3f;
   --light-blue: #53d8fb;
@@ -49,4 +50,7 @@
 
   background: var(--bg-color);
   color: var(--main-txt-color);
+}
+
+.outlet-container {
 }
