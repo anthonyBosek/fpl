@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light-grey: #dae3e5;
+  --dark-grey: #393d3f;
+  --light-blue: #53d8fb;
+  --med-blue: #0a71d8;
+  --med-blue-lt: #549ce4;
+  --dark-blue: #032241;
+  --yellow: #f7bd15;
+  --yellow-lt: #f9d15b;
+  --orange: #f55d3e;
+
+  --aqua: #05f7fc;
+  --white: #ffffff;
+  --rose: #f61a71;
+  --russian-violet: #381d54;
+  --scarlet: #ff311e;
+  --steel-pink: #dd16c0;
+  --erin: #3dfe44;
+  --aquamarine: #07f9a0;
+  --lime: #c7ff12;
+  --electric-purple: #b824f1;
+  --ghost-white: #f8f9fa;
+
+  --bg-color: #f5f5f5;
+  --primary-color: #fafafa;
+  --main-txt-color: #212121;
+  --second-txt-color: #757575;
+  --search-bg-color: #fafafa;
+
+  background: var(--bg-color);
+  color: var(--main-txt-color);
+}
+
+.dark {
+  --bg-color: #424242;
+  --primary-color: #212121;
+  --main-txt-color: #fafafa;
+  --second-txt-color: #e0e0e0;
+  --search-bg-color: #333333;
+
+  background: var(--bg-color);
+  color: var(--main-txt-color);
+}
