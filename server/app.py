@@ -6,6 +6,7 @@ from werkzeug.exceptions import NotFound
 # models
 from models.user import User
 
+
 # auth routes
 from routes.auth.login import Login
 from routes.auth.logout import Logout
@@ -28,12 +29,12 @@ api.add_resource(Logout, "/auth/logout")
 api.add_resource(Me, "/auth/me")
 api.add_resource(Refresh, "/auth/refresh")
 api.add_resource(Register, "/auth/register")
-api.add_resource(Leagues, "/leagues")
 api.add_resource(LeagueById, "/leagues/<int:id>")
-api.add_resource(Players, "/players")
+api.add_resource(Leagues, "/leagues")
 api.add_resource(PlayerById, "/players/<int:id>")
-api.add_resource(Teams, "/teams")
+api.add_resource(Players, "/players")
 api.add_resource(TeamById, "/teams/<int:id>")
+api.add_resource(Teams, "/teams")
 
 
 @jwt.user_lookup_loader
