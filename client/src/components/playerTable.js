@@ -16,7 +16,7 @@ const PlayerTable = ({ id }) => {
   useEffect(() => {
     const filteredTeam = PL_ROSTERS.filter((t) => t.team.id === id)[0];
     setTeam(filteredTeam);
-  }, []);
+  }, [id]);
 
   const handleChange = (e) => setPosition(e.target.value);
 

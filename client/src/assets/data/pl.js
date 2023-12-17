@@ -1,3 +1,25 @@
+import { randomThumb } from "../../utils/main";
+export const FL = [
+  {
+    id: 1,
+    name: "Fantasy League 1",
+    manager_name: "Manager 1",
+    Image: randomThumb(),
+  },
+  {
+    id: 2,
+    name: "Fantasy League 2",
+    manager_name: "Manager 2",
+    Image: randomThumb(),
+  },
+  {
+    id: 3,
+    name: "Fantasy League 3",
+    manager_name: "Manager 3",
+    Image: randomThumb(),
+  },
+];
+
 export const PL_CLUBS = [
   {
     team: {

@@ -26,7 +26,7 @@ const routes = [
         element: <PremierLeague />,
       },
       {
-        path: "/fantasy",
+        path: "/fantasy-league",
         element: <FantasyLeague />,
       },
       {

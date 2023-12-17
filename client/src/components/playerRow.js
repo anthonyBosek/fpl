@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Box, Collapse } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import BarChartIcon from "@mui/icons-material/BarChart";

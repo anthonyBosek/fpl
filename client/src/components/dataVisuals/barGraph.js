@@ -8,7 +8,7 @@ const StatBar = ({ player }) => {
     const data_ = handleCreateData();
     data_.Player = player.name;
     setData(data_);
-  }, []);
+  }, [player.name]);
 
   const handleCreateData = () => {
     const stats = [

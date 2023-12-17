@@ -1,0 +1,14 @@
+.fantasy-league {
+  max-width: 70%;
+  margin: 0 auto;
+  padding-top: 1rem;
+  background-color: inherit;
+}
+.league-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
