@@ -22,6 +22,7 @@ class Player(db.Model, TimestampMixin):
         secondary="team_players",
         back_populates="players",
         cascade="all, delete-orphan",
+        single_parent=True,
     )
 
     owner = association_proxy("team", "owner")

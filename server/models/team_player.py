@@ -4,7 +4,7 @@ from models.team import Team
 from models.player import Player
 
 
-class Team_player(db.Model):
+class TeamPlayer(db.Model):
     __tablename__ = "team_players"
 
     team_id = db.Column(db.Integer, db.ForeignKey("teams.id"), primary_key=True)

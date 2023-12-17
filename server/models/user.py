@@ -18,12 +18,12 @@ class User(db.Model, TimestampMixin):
     email = db.Column(db.String, nullable=False, unique=True)
     _password_hash = db.Column(db.String, nullable=False)
 
-    # leagues = db.relationship(
-    #     "League", back_populates="manager", cascade="all, delete-orphan"
-    # )
-    # teams = db.relationship(
-    #     "Team", back_populates="owner", cascade="all, delete-orphan"
-    # )
+    leagues = db.relationship(
+        "League", back_populates="manager", cascade="all, delete-orphan"
+    )
+    teams = db.relationship(
+        "Team", back_populates="owner", cascade="all, delete-orphan"
+    )
 
     league_names = association_proxy("leagues", "name")
     team_names = association_proxy("teams", "name")
