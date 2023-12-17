@@ -18,12 +18,12 @@ class User(db.Model, TimestampMixin):
     email = db.Column(db.String, nullable=False, unique=True)
     _password_hash = db.Column(db.String, nullable=False)
 
-    leagues = db.relationship(
-        "League", back_populates="manager", cascade="all, delete-orphan"
-    )
-    teams = db.relationship(
-        "Team", back_populates="owner", cascade="all, delete-orphan"
-    )
+    # leagues = db.relationship(
+    #     "League", back_populates="manager", cascade="all, delete-orphan"
+    # )
+    # teams = db.relationship(
+    #     "Team", back_populates="owner", cascade="all, delete-orphan"
+    # )
 
     league_names = association_proxy("leagues", "name")
     team_names = association_proxy("teams", "name")
@@ -74,7 +74,7 @@ class User(db.Model, TimestampMixin):
             raise ValueError("Username must be at least 2 characters")
         elif len(new_username) > 50:
             raise ValueError("Username must be less than 50 characters")
-        elif db.session.get(User, username=new_username):
+        elif db.session.query(User).filter_by(username=new_username).first():
             raise ValueError("Username is already taken")
         return new_username
 
@@ -84,7 +84,7 @@ class User(db.Model, TimestampMixin):
             raise AssertionError("Email is required")
         elif not re.match(r"[^@]+@[^@]+\.[^@]+", email_):
             raise ValueError("Email must be valid")
-        elif db.session.get(User, email=email_):
+        elif db.session.query(User).filter_by(email=email_).first():
             raise ValueError("Email is already taken")
         return email_
 

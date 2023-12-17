@@ -15,6 +15,7 @@ user_schema = UserSchema(session=db.session)
 
 class Register(Resource):
     def post(self):
+        print(request.get_json())
         try:
             data = {
                 "first_name": request.get_json().get("first_name"),
