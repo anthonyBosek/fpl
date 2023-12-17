@@ -5,6 +5,7 @@ from werkzeug.exceptions import NotFound
 
 # models
 from models.user import User
+from schemas.league_player_schema import LeaguePlayerSchema
 
 # auth routes
 from routes.auth.login import Login
