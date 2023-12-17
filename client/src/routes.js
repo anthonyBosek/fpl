@@ -3,6 +3,7 @@ import Error from "./views/error";
 import Home from "./views/home";
 import Authentication from "./features/user/auth";
 import PremierLeague from "./views/premierLeague";
+import FantasyLeague from "./views/fantasyLeague";
 import Dashboard from "./views/dashboard";
 
 const routes = [
@@ -24,10 +25,10 @@ const routes = [
         path: "/premier-league",
         element: <PremierLeague />,
       },
-      //   {
-      //     path: "/fantasy",
-      //     element: <Fantasy />,
-      //   },
+      {
+        path: "/fantasy",
+        element: <FantasyLeague />,
+      },
       {
         path: "/users/:id/dashboard",
         element: <Dashboard />,

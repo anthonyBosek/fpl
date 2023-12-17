@@ -5,12 +5,10 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import { StyledTableCell } from "./styledComponents/tableCell";
 import { StyledTableRow } from "./styledComponents/tableRow";
 import { ColorButtonOutlined } from "./styledComponents/colorBtnOutline";
+import StatBar from "./dataVisuals/barGraph";
 
 const PlayerRow = ({ player, team }) => {
-  //   const [player, setPlayer] = useState(null);
   const [open, setOpen] = useState(false);
-
-  //   useEffect(() => {}, []);
 
   const handleClick = (id) => {
     console.log(id);
@@ -53,7 +51,9 @@ const PlayerRow = ({ player, team }) => {
                 background: "#f8f9fa",
                 borderRadius: "10px",
               }}
-            ></Box>
+            >
+              <StatBar player={player} />
+            </Box>
           </Collapse>
         </StyledTableCell>
       </StyledTableRow>

@@ -26,7 +26,8 @@ const ClubView = ({ team, venue, handleClubView }) => {
       </ColorButtonOutlined>
       <div className="club-view-info">
         <div className="club-view-name">{team.name}</div>
-        <div className="club-view-est">Est. {team.founded}</div>
+        <div className="club-view-est">{venue.city + " • " + team.country}</div>
+        {/* <div className="club-view-est">Est. {team.founded}</div> */}
       </div>
     </div>
   );

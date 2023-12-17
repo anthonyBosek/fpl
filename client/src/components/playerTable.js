@@ -11,26 +11,45 @@ import PlayerRow from "./playerRow";
 
 const PlayerTable = ({ id }) => {
   const [team, setTeam] = useState(null);
+  const [position, setPosition] = useState("all");
 
   useEffect(() => {
     const filteredTeam = PL_ROSTERS.filter((t) => t.team.id === id)[0];
     setTeam(filteredTeam);
   }, []);
 
-  const allPlayers = team?.players.map((player) => (
-    <PlayerRow key={player.id} player={player} team={team.team} />
-  ));
+  const handleChange = (e) => setPosition(e.target.value);
+
+  const allPlayers = team?.players
+    .filter((player) => position === "all" || player.position === position)
+    .map((player) => (
+      <PlayerRow key={player.id} player={player} team={team.team} />
+    ));
 
   return (
     <TableContainer component={Paper}>
       <Table sx={{ margin: "20px auto" }}>
         <TableHead>
           <TableRow>
-            <StyledTableCell align="center" width="10px"></StyledTableCell>
-            <StyledTableCell align="center">Name</StyledTableCell>
-            <StyledTableCell align="center">Position</StyledTableCell>
-            <StyledTableCell align="center">Jersey #</StyledTableCell>
-            <StyledTableCell align="center">Stats</StyledTableCell>
+            <StyledTableCell align="center" width="11%"></StyledTableCell>
+            <StyledTableCell align="center" width="26%">
+              Name
+            </StyledTableCell>
+            <StyledTableCell align="center" width="26%">
+              <select onChange={handleChange} className="pos-sel">
+                <option value="all">All</option>
+                <option value="Goalkeeper">Goalkeeper</option>
+                <option value="Defender">Defender</option>
+                <option value="Midfielder">Midfielder</option>
+                <option value="Attacker">Attacker</option>
+              </select>
+            </StyledTableCell>
+            <StyledTableCell align="center" width="26%">
+              Jersey #
+            </StyledTableCell>
+            <StyledTableCell align="center" width="11%">
+              Stats
+            </StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>{allPlayers}</TableBody>
