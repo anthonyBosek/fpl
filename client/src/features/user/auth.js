@@ -6,6 +6,11 @@ import toast from "react-hot-toast";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import FormHelperText from "@mui/material/FormHelperText";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -14,6 +19,7 @@ import Container from "@mui/material/Container";
 import Copyright from "../../components/copyright";
 import logo from "../../assets/images/logo.png";
 import { fetchRegister } from "./userSlice";
+import { PL_CLUBS } from "../../assets/data/pl";
 import "../../styles/auth.css";
 
 const registerSchema = yup.object().shape({
@@ -39,6 +45,8 @@ const loginSchema = yup.object().shape({
 const initialValuesRegister = {
   first_name: "",
   last_name: "",
+  location: "",
+  favorite_team: "",
   username: "",
   email: "",
   password: "",
@@ -68,6 +76,12 @@ const Authentication = () => {
       toast.error(action.payload);
     }
   };
+
+  const allMenuItems = PL_CLUBS.map(({ team }) => (
+    <MenuItem key={`menu-${team.id}`} value={team.code}>
+      {team.name}
+    </MenuItem>
+  ));
 
   return (
     <div id="auth">
@@ -130,6 +144,41 @@ const Authentication = () => {
                           error={!!touched.last_name && !!errors.last_name}
                           helperText={touched.last_name && errors.last_name}
                         />
+                      </Grid>
+                      <Grid item xs={12} sm={6}>
+                        <TextField
+                          fullWidth
+                          type="text"
+                          label="Location"
+                          onBlur={handleBlur}
+                          onChange={handleChange}
+                          value={values.location}
+                          name="location"
+                          error={!!touched.location && !!errors.location}
+                          helperText={touched.location && errors.location}
+                        />
+                      </Grid>
+                      <Grid item xs={12} sm={6}>
+                        <FormControl sx={{ width: "100%" }}>
+                          <InputLabel id="favorite_team">
+                            Favorite Team
+                          </InputLabel>
+                          <Select
+                            labelId="favorite_team"
+                            fullWidth
+                            label="Favorite Team"
+                            onBlur={handleBlur}
+                            onChange={handleChange}
+                            value={values.favorite_team}
+                            name="favorite_team"
+                          >
+                            <MenuItem value="None">
+                              <em>None</em>
+                            </MenuItem>
+                            {allMenuItems}
+                          </Select>
+                          <FormHelperText></FormHelperText>
+                        </FormControl>
                       </Grid>
                       <Grid item xs={12}>
                         <TextField

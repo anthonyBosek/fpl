@@ -4,9 +4,10 @@ from flask_jwt_extended import jwt_required
 from config import db
 from models.league import League
 from schemas.league_schema import LeagueSchema
+from schemas.league_schema import LeaguesSchema
 
 league_schema = LeagueSchema(session=db.session)
-leagues_schema = LeagueSchema(many=True, session=db.session)
+leagues_schema = LeaguesSchema(many=True, session=db.session)
 
 
 class Leagues(Resource):
@@ -21,7 +22,7 @@ class Leagues(Resource):
         print(request.json)
         try:
             data = request.json
-            leagues_schema.validate(data)
+            league_schema.validate(data)
             new_league = league_schema.load(data)
             db.session.add(new_league)
             db.session.commit()

@@ -27,8 +27,14 @@ const PlayerTable = ({ id }) => {
     ));
 
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ margin: "20px auto" }}>
+    <TableContainer>
+      <Table
+        sx={{
+          margin: "20px auto",
+          border: "1px solid #ccc",
+          boxShadow: "0 0 6px #381d54",
+        }}
+      >
         <TableHead>
           <TableRow>
             <StyledTableCell align="center" width="11%"></StyledTableCell>

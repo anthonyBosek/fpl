@@ -4,72 +4,162 @@ import Grid from "@mui/material/Grid";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import { ColorButtonOutlined } from "../components/styledComponents/colorBtnOutline";
+import EditIcon from "@mui/icons-material/Edit";
 import { CardActionArea } from "@mui/material";
-import thumb1 from "../assets/images/thumbs/thumb-01.jpg";
+import logo from "../assets/images/logo.png";
+import basic from "../assets/images/basic.png";
 
-const LeagueCard = ({ league, handleLeagueView }) => {
+const LeagueCard = ({ isOwn, league, handleLeagueView }) => {
   return (
-    <Grid
-      item
-      xs={12}
-      sm={4}
-      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-    >
+    <Grid item sm={6}>
       <Card
-        sx={{ display: "flex" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          backgroundColor: "#f8f9fa",
+          boxShadow: "0 0 6px #381d54",
+        }}
         onClick={() => handleLeagueView(league.id)}
       >
         <CardActionArea>
-          <CardMedia
-            component="img"
-            sx={{ width: "100%", height: 200 }}
-            image={thumb1}
-            alt={league.name}
-          />
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Box sx={{ display: "flex" }}>
-              <Typography component="div" variant="h4" fontFamily="Oswald">
+          <Box
+            sx={{
+              height: "60px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              backgroundImage:
+                "linear-gradient(to right,#ff311e,#f61a71,#dd16c0)",
+              borderBottom: "1px solid #381d54",
+              boxShadow: "0 0 6px #381d54",
+            }}
+          >
+            <CardMedia
+              component="img"
+              sx={{ width: "50px", marginLeft: "8px" }}
+              image={logo}
+              alt="basic-logo"
+            />
+            <Box
+              sx={{
+                float: "right",
+                height: "66px",
+                width: "250px",
+                background: "#381d54",
+              }}
+            >
+              <Box
+                sx={{
+                  height: "96px",
+                  width: "96px",
+                  marginTop: "-50px",
+                  marginLeft: "-48px",
+                  background: "#381d54",
+                  transform: "rotate(45deg)",
+                }}
+              ></Box>
+            </Box>
+          </Box>
+          <Box sx={{ display: "flex" }}>
+            <CardMedia
+              component="img"
+              sx={{ width: 150, margin: "3px", borderRadius: 1 }}
+              image={league.img}
+              alt={league.name}
+            />
+            <CardContent sx={{ flex: "1 0 auto" }}>
+              <Typography
+                component="div"
+                variant="h5"
+                fontFamily="Oswald"
+                fontSize="2.25rem"
+                fontWeight="600"
+                paddingBottom="4px"
+                borderBottom="1px solid #ccc"
+              >
                 {league.name}
               </Typography>
-            </Box>
-            <hr style={{ margin: "6px 0" }} />
-            <Box sx={{ float: "right" }}>
-              <Typography
-                color="text.secondary"
-                component="div"
-                fontFamily="Oswald"
-              >
-                {league.manager_name}
-              </Typography>
-            </Box>
-            <Typography
-              variant="subtitle1"
-              color="text.secondary"
-              component="div"
-              fontFamily="Oswald"
-            >
-              blank
-            </Typography>
-            <Box sx={{ float: "right", margin: "6px 0" }}>
               <Typography
                 variant="subtitle1"
                 color="text.secondary"
                 component="div"
                 fontFamily="Oswald"
+                fontSize="1.5rem"
               >
-                blank
+                <b>Manager:</b> {league.manager_name}
               </Typography>
-            </Box>
-            <Typography
-              variant="subtitle1"
-              color="text.secondary"
-              component="div"
-              fontFamily="Oswald"
-              margin="6px 0"
+              <Box display="flex" justifyContent="space-between">
+                <Typography
+                  variant="subtitle1"
+                  color="text.secondary"
+                  component="div"
+                >
+                  <b>League Type:</b> {league.scored}
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  color="text.secondary"
+                  component="div"
+                >
+                  <b>Number of Teams:</b> {league.team_limit}
+                </Typography>
+              </Box>
+            </CardContent>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                borderTop: "1px solid #ccc",
+                padding: "2px",
+              }}
             >
-              blank
-            </Typography>
-          </CardContent>
+              <Box
+                sx={{
+                  width: "200px",
+                  height: "50px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                }}
+              >
+                {isOwn && (
+                  <>
+                    <ColorButtonOutlined
+                      size="small"
+                      variant="outlined"
+                      // onClick={handleClick}
+                    >
+                      {isOwn ? "Add Team" : "Join League"}
+                    </ColorButtonOutlined>
+                    <ColorButtonOutlined
+                      size="small"
+                      variant="outlined"
+                      // onClick={handleClick}
+                    >
+                      <EditIcon />
+                      Edit
+                    </ColorButtonOutlined>
+                  </>
+                )}
+              </Box>
+              <CardMedia
+                component="img"
+                sx={{ width: "140px" }}
+                image={basic}
+                alt="basic-logo"
+              />
+            </Box>
+          </Box>
         </CardActionArea>
       </Card>
     </Grid>

@@ -6,12 +6,12 @@ import { StyledTableCell } from "./styledComponents/tableCell";
 import { StyledTableRow } from "./styledComponents/tableRow";
 import { ColorButtonOutlined } from "./styledComponents/colorBtnOutline";
 import StatBar from "./dataVisuals/barGraph";
+import { randomThumb } from "../utils/main";
 
-const PlayerRow = ({ player, team }) => {
+const TeamRow = ({ team }) => {
   const [open, setOpen] = useState(false);
 
-  const handleClick = (id) => setOpen(!open);
-
+  const handleClick = () => setOpen(!open);
   return (
     <>
       <StyledTableRow>
@@ -19,20 +19,19 @@ const PlayerRow = ({ player, team }) => {
           <CardMedia
             component="img"
             sx={{ width: 60 }}
-            image={player.photo}
-            alt={player.name}
+            image={randomThumb()}
+            alt={team.name}
           />
         </StyledTableCell>
-        <StyledTableCell align="center">{player.name}</StyledTableCell>
-        <StyledTableCell align="center">{player.position}</StyledTableCell>
-        <StyledTableCell align="center">{player.number || "-"}</StyledTableCell>
+        <StyledTableCell align="center">{team.name}</StyledTableCell>
+        <StyledTableCell align="center">{team.owner_name}</StyledTableCell>
         <StyledTableCell align="right">
           <ColorButtonOutlined
             size="small"
             variant="outlined"
             sx={{ margin: "6px 30px" }}
             startIcon={<BarChartIcon />}
-            onClick={() => handleClick(player.id)}
+            onClick={() => handleClick()}
           >
             Info
           </ColorButtonOutlined>
@@ -48,9 +47,7 @@ const PlayerRow = ({ player, team }) => {
                 background: "#f8f9fa",
                 borderRadius: "10px",
               }}
-            >
-              <StatBar player={player} />
-            </Box>
+            ></Box>
           </Collapse>
         </StyledTableCell>
       </StyledTableRow>
@@ -58,4 +55,4 @@ const PlayerRow = ({ player, team }) => {
   );
 };
 
-export default PlayerRow;
+export default TeamRow;
