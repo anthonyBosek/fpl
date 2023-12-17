@@ -1,5 +1,16 @@
-.home {
+/* .home {
   max-width: 70%;
   margin: 0 auto;
   padding-top: 1rem;
+} */
+.hero {
+  background-image: url("../assets/images/hero.webp");
+  background-size: cover;
+  background-position: center;
+  height: 1000px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
