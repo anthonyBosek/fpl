@@ -4,7 +4,8 @@ from sqlalchemy.ext.associationproxy import association_proxy
 from models.mixins import TimestampMixin
 from models.user import User
 from models.league import League
-from models.team_player import team_players
+
+# from models.team_player import Team_player
 
 
 class Team(db.Model, TimestampMixin):
@@ -23,7 +24,7 @@ class Team(db.Model, TimestampMixin):
     league = db.relationship("League", back_populates="teams")
     players = db.relationship(
         "Player",
-        secondary=team_players,
+        secondary="team_players",
         back_populates="team",
         cascade="all, delete-orphan",
     )
@@ -62,4 +63,4 @@ class Team(db.Model, TimestampMixin):
         return league_id
 
     def __repr__(self):
-        return f"<Team: #{self.id} {self.name}>"
+        return f"<Team #{self.id} {self.name}>"
