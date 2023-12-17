@@ -21,20 +21,19 @@ class UserSchema(ma.SQLAlchemySchema):
 
     first_name = fields.String(required=True, validate=validate.Length(min=2, max=50))
     last_name = fields.String(required=True, validate=validate.Length(min=2, max=50))
+    location = fields.String(required=True, validate=validate.Length(min=2, max=80))
+    favorite_team = fields.String(required=True, validate=validate.Length(min=3, max=3))
     username = fields.String(required=True, validate=validate.Length(min=2, max=50))
     email = fields.String(required=True, validate=validate.Length(min=2, max=256))
-    teams = fields.List(
-        fields.Nested(
-            "TeamSchema",
-            exclude=(
-                "owner",
-                "owner_id",
-                "league_id",
-                "players",
-            ),
-            dump_only=True,
-        )
-    )
+    # teams = fields.List(
+    #     fields.Nested(
+    #         "TeamSchema",
+    #         exclude=("owner", "owner_id", "league", "players"),
+    #         dump_only=True,
+    #     )
+    # )
     leagues = fields.List(
-        fields.Nested("LeagueSchema", exclude=("manager",), dump_only=True)
+        fields.Nested(
+            "LeagueSchema", only=("id", "name", "scored", "team_limit"), dump_only=True
+        )
     )
