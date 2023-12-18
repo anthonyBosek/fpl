@@ -26,13 +26,12 @@ class TeamSchema(ma.SQLAlchemySchema):
     league = fields.Nested(
         "LeagueSchema", only=("name", "manager.username"), dump_only=True
     )
-    # players = fields.List(
-    #     fields.Nested(
-    #         "PlayerSchema",
-    #         exclude=("owner",),
-    #         only=("id", "name", "position", "data_num"),
-    #         dump_only=True,
-    #     )
-    # )
+    players = fields.List(
+        fields.Nested(
+            "PlayerSchema",
+            only=("id", "ref", "spot", "name", "position"),
+            dump_only=True,
+        )
+    )
     league_name = fields.String(dump_only=True)
     owner_name = fields.String(dump_only=True)
