@@ -5,8 +5,6 @@ from models.mixins import TimestampMixin
 from models.user import User
 from models.league import League
 
-# from models.team_player import Team_player
-
 
 class Team(db.Model, TimestampMixin):
     __tablename__ = "teams"
@@ -23,11 +21,7 @@ class Team(db.Model, TimestampMixin):
     owner = db.relationship("User", back_populates="teams")
     league = db.relationship("League", back_populates="teams")
     players = db.relationship(
-        "Player",
-        secondary="team_players",
-        back_populates="team",
-        cascade="all, delete-orphan",
-        single_parent=True,
+        "Player", back_populates="team", cascade="all, delete-orphan"
     )
 
     league_name = association_proxy("league", "name")

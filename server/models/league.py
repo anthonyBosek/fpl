@@ -20,6 +20,13 @@ class League(db.Model, TimestampMixin):
     teams = db.relationship(
         "Team", back_populates="league", cascade="all, delete-orphan"
     )
+    players = db.relationship(
+        "Player",
+        secondary="league_players",
+        back_populates="league",
+        cascade="all, delete-orphan",
+        single_parent=True,
+    )
 
     manager_name = association_proxy("manager", "username")
 
@@ -44,14 +51,14 @@ class League(db.Model, TimestampMixin):
         return scored
 
     @validates("team_limit")
-    def validate_team_limit(self, _, team_limit):
-        if not team_limit:
+    def validate_team_limit(self, _, team_limit_):
+        if not team_limit_:
             raise AssertionError("Team limit is required")
-        elif type(team_limit) is not int:
+        elif type(team_limit_) is not int:
             raise AssertionError("Team limit must be of type int")
-        elif 4 < team_limit < 10:
+        elif not 4 <= team_limit_ <= 10:
             raise ValueError("Team limit must be between 4 and 10")
-        return team_limit
+        return team_limit_
 
     @validates("manager_id")
     def validate_manager_id(self, _, manager_id):

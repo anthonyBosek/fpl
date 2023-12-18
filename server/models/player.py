@@ -17,16 +17,16 @@ class Player(db.Model, TimestampMixin):
         db.Integer, db.ForeignKey("teams.id", ondelete="CASCADE"), nullable=False
     )
 
-    team = db.relationship(
-        "Team",
-        secondary="team_players",
+    team = db.relationship("Team", back_populates="players")
+    league = db.relationship(
+        "League",
+        secondary="league_players",
         back_populates="players",
         cascade="all, delete-orphan",
         single_parent=True,
     )
 
     owner = association_proxy("team", "owner")
-    league = association_proxy("team", "league")
 
     @validates("ref")
     def validate_ref(self, _, ref):
@@ -63,7 +63,7 @@ class Player(db.Model, TimestampMixin):
             raise AssertionError("Position is required")
         elif not type(position) is str:
             raise AssertionError("Position must be of type str")
-        elif 8 <= len(position) <= 10:
+        elif not 8 <= len(position) <= 10:
             raise ValueError("Position must be between 8 and 10 characters")
         elif position not in ["Goalkeeper", "Defender", "Midfielder", "Attacker"]:
             raise ValueError(

@@ -59,12 +59,12 @@ class User(db.Model, TimestampMixin):
         return location
 
     @validates("favorite_team")
-    def validate_favorite_team(self, _, favorite_team):
-        if not favorite_team:
+    def validate_favorite_team(self, _, favorite_team_):
+        if not favorite_team_:
             raise AssertionError("Favorite team is required")
-        elif not len(favorite_team) == 3:
+        elif not len(favorite_team_) == 3:
             raise ValueError("Favorite team must be 3 characters")
-        return favorite_team
+        return favorite_team_
 
     @validates("username")
     def validate_username(self, _, new_username):
