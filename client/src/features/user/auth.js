@@ -177,7 +177,7 @@ const Authentication = () => {
                             </MenuItem>
                             {allMenuItems}
                           </Select>
-                          <FormHelperText></FormHelperText>
+                          {/* <FormHelperText></FormHelperText> */}
                         </FormControl>
                       </Grid>
                       <Grid item xs={12}>

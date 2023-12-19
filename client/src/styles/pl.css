@@ -8,9 +8,10 @@
   font-family: "Oswald", sans-serif;
   font-size: 2.5rem;
   font-weight: 600;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
+  margin: 0 50px 15px 50px;
+  padding-bottom: 15px;
   text-align: center;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .pos-sel {
