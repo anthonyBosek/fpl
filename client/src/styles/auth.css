@@ -3,7 +3,7 @@
   /* align-items: center; */
   justify-content: center;
   font-family: "Oswald", sans-serif;
-  min-height: calc(100vh - 164px);
+  min-height: calc(85vh - 190px);
 }
 
 .auth-logo {

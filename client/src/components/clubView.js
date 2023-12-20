@@ -18,7 +18,7 @@ const ClubView = ({ team, venue, handleClubView }) => {
       <ColorButtonOutlined
         size="small"
         variant="outlined"
-        sx={{ margin: "6px", float: "right" }}
+        sx={{ margin: "6px 50px 6px 0", float: "right" }}
         startIcon={<ArrowBackIosNewIcon />}
         onClick={() => handleClubView(null)}
       >

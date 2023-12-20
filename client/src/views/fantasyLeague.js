@@ -1,18 +1,33 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
-// import { randomThumb } from "../utils/main";
-import { FL } from "../assets/data/pl";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import toast from "react-hot-toast";
 import Grid from "@mui/material/Grid";
+import { randomThumb } from "../utils/main";
 import LeagueCard from "../components/leagueCard";
 import LeagueView from "../components/leagueView";
+import TeamTable from "../components/teamTable";
 import "../styles/fantasy.css";
 
 const FantasyLeague = () => {
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.user.data);
   const [leagues, setLeagues] = useState([]);
   const [lID, setLID] = useState(null);
   const [league, setLeague] = useState(null);
 
   useEffect(() => {
-    setLeagues(FL);
+    const getLeagues = async () => {
+      try {
+        const res = await axios.get("/leagues");
+        res.data.forEach((league) => (league.img = randomThumb("league")));
+        setLeagues(res.data);
+      } catch (error) {
+        toast.error("Error getting leagues");
+      }
+    };
+    getLeagues();
   }, []);
 
   useEffect(() => {
@@ -32,7 +47,6 @@ const FantasyLeague = () => {
 
   return (
     <div className="fantasy-league">
-      {console.log(leagues)}
       {!league ? (
         <>
           <div className="league-title">Fantasy Leagues</div>
@@ -44,7 +58,11 @@ const FantasyLeague = () => {
         </>
       ) : (
         <>
-          <LeagueView league={league} handleLeagueView={handleLeagueView} />
+          <LeagueView
+            league_id={league.id}
+            handleLeagueView={handleLeagueView}
+          />
+          <TeamTable id={league.id} />
         </>
       )}
     </div>

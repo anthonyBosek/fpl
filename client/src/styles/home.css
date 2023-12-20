@@ -4,13 +4,167 @@
   padding-top: 1rem;
 } */
 .hero {
-  background-image: url("../assets/images/hero.webp");
+  /* background-image: url("../assets/images/trophy.jpg"); */
+  background-image: url("../assets/images/home.png");
   background-size: cover;
   background-position: center;
-  height: 1000px;
+  height: 830px;
   width: 100vw;
+}
+.hero-cover {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.hero-logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-left: 40px;
+  margin-top: 180px;
+  padding: 6px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.hero-logo img {
+  width: 100%;
+  height: 100%;
+}
+.line {
+  margin: 10px auto 0 auto;
+  width: 400px;
+  border-bottom: #f8f9fa 1px solid;
+}
+.line3 {
+  width: 200px;
+  border-bottom: #f8f9fa 1px solid;
+}
+.end {
+  border-bottom: 2px solid #333;
+}
+.hero-title,
+.hero-txt {
+  font-family: "Oswald";
+  margin-top: 15px;
+  color: #f8f9fa;
+  text-shadow: 2px 2px 2px #333, 0 0 8px #381d54, 0 0 20px #333;
+}
+.hero-title {
+  font-size: 6rem;
+  margin-top: 14vh;
+}
+.hero-txt {
+  font-size: 2rem;
+}
+.divider1 {
+  width: 100vw;
+  height: 8px;
+  /* border-top: 1px solid #f8f9fa;
+  border-bottom: 1px solid #f8f9fa; */
+  background-image: linear-gradient(
+    to right,
+    #05f7fc,
+    #07f9a0,
+    #3dfe44,
+    #c7ff12
+  );
+}
+.pl-link-img {
+  margin-top: 6px;
+  width: 400px;
+  border-radius: 6px;
+}
+.fan-link-img {
+  margin-left: -20px;
+  margin-right: 1rem;
+  width: 150px;
+  border-radius: 50%;
+}
+.pl-link-img:hover {
+  box-shadow: 0 0 5px #ccc, 0 0 10px #ccc, 0 0 15px #ccc;
+}
+.divider2 {
+  width: 100vw;
+  height: 8px;
+  /* border-top: 1px solid #f8f9fa;
+  border-bottom: 1px solid #f8f9fa; */
+  background-image: linear-gradient(to right, #ff311e, #f61a71, #dd16c0);
+}
+.article-img {
+  width: 100vw;
+  margin: 0;
+}
+.article-header {
+  font-family: "Oswald";
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+.info-section,
+.info-section2 {
+  height: 300px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+.info-sect-box {
+  width: 100vw;
+  background-color: #f8f9fa;
+}
+.info-section {
+  max-width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+.info-section2 {
+  display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #381d54;
+}
+.score-img {
+  width: 340px;
+  margin: 0 200px;
+}
+section {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+.story-img {
+  width: 1000px;
+  border-radius: 10px;
+}
+.left {
+  float: left;
+  margin: 0 30px 20px 0;
+}
+.right {
+  float: right;
+  margin: 0 0 20px 30px;
+}
+p {
+  font-family: "Oswald";
+  font-size: 1rem;
+  line-height: 2rem;
+  text-align: justify;
+  text-indent: 10px;
+  margin: 0 0 20px 0;
+}
+.league-table {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table-img {
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
 }

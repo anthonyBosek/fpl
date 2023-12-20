@@ -1,20 +1,14 @@
-import thumb1 from "../assets/images/thumbs/thumb-01.jpg";
-import thumb2 from "../assets/images/thumbs/thumb-02.jpg";
-import thumb3 from "../assets/images/thumbs/thumb-03.jpg";
-import thumb4 from "../assets/images/thumbs/thumb-04.jpg";
-import thumb5 from "../assets/images/thumbs/thumb-05.jpg";
-import thumb6 from "../assets/images/thumbs/thumb-06.jpg";
-import thumb7 from "../assets/images/thumbs/thumb-07.jpg";
-import thumb8 from "../assets/images/thumbs/thumb-08.jpg";
-import thumb9 from "../assets/images/thumbs/thumb-09.jpg";
-import thumb10 from "../assets/images/thumbs/thumb-10.jpg";
-import thumb11 from "../assets/images/thumbs/thumb-11.jpg";
-import thumb12 from "../assets/images/thumbs/thumb-12.jpg";
-import thumb13 from "../assets/images/thumbs/thumb-13.jpg";
-import thumb14 from "../assets/images/thumbs/thumb-14.jpg";
-import thumb15 from "../assets/images/thumbs/thumb-15.jpg";
-import thumb16 from "../assets/images/thumbs/thumb-16.jpg";
-import thumb17 from "../assets/images/thumbs/thumb-17.jpg";
+import lthumb1 from "../assets/images/thumbs/thumb-01.jpg";
+import lthumb2 from "../assets/images/thumbs/thumb-02.jpg";
+import lthumb3 from "../assets/images/thumbs/thumb-09.jpg";
+import lthumb4 from "../assets/images/thumbs/thumb-10.jpg";
+import lthumb5 from "../assets/images/thumbs/thumb-11.jpg";
+import lthumb6 from "../assets/images/thumbs/thumb-13.jpg";
+import tthumb1 from "../assets/images/thumbs/thumb-03.jpg";
+import tthumb2 from "../assets/images/thumbs/thumb-05.jpg";
+import tthumb3 from "../assets/images/thumbs/thumb-08.jpg";
+import tthumb4 from "../assets/images/thumbs/thumb-15.jpg";
+import tthumb5 from "../assets/images/thumbs/thumb-16.jpg";
 
 export const getCookie = (name) => {
   const value = `; ${document.cookie}`;
@@ -22,27 +16,12 @@ export const getCookie = (name) => {
   if (parts.length === 2) return parts.pop().split(";").shift();
 };
 
-export const randomThumb = () => {
-  const thumbs = [
-    thumb1,
-    thumb2,
-    thumb3,
-    thumb4,
-    thumb5,
-    thumb6,
-    thumb7,
-    thumb8,
-    thumb9,
-    thumb10,
-    thumb11,
-    thumb12,
-    thumb13,
-    thumb14,
-    thumb15,
-    thumb16,
-    thumb17,
-  ];
-  return thumbs[Math.floor(Math.random() * thumbs.length)];
+export const randomThumb = (img = null) => {
+  const lthumbs = [lthumb1, lthumb2, lthumb3, lthumb4, lthumb5, lthumb6];
+  const tthumbs = [tthumb1, tthumb2, tthumb3, tthumb4, tthumb5];
+  return img === "league"
+    ? lthumbs[Math.floor(Math.random() * 6)]
+    : tthumbs[Math.floor(Math.random() * 5)];
 };
 
 export const LINEUP = {
