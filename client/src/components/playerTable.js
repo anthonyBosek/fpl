@@ -53,9 +53,7 @@ const PlayerTable = ({ id }) => {
             <StyledTableCell align="center" width="26%">
               Jersey #
             </StyledTableCell>
-            <StyledTableCell align="center" width="11%">
-              Stats
-            </StyledTableCell>
+            <StyledTableCell align="center" width="11%"></StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>{allPlayers}</TableBody>

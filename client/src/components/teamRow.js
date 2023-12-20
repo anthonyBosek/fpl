@@ -1,17 +1,15 @@
 import { useState } from "react";
 import { Box, Collapse } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
-import BarChartIcon from "@mui/icons-material/BarChart";
 import { StyledTableCell } from "./styledComponents/tableCell";
 import { StyledTableRow } from "./styledComponents/tableRow";
-import { ColorButtonOutlined } from "./styledComponents/colorBtnOutline";
-import StatBar from "./dataVisuals/barGraph";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { randomThumb } from "../utils/main";
 import PlayerCardSmall from "./playerCardSm";
 
 const TeamRow = ({ team }) => {
   const [open, setOpen] = useState(false);
-  // const [players, setPlayers] = useState(team.players);
 
   const handleClick = () => setOpen(!open);
 
@@ -21,8 +19,7 @@ const TeamRow = ({ team }) => {
 
   return (
     <>
-      {/* {console.log(team)} */}
-      <StyledTableRow>
+      <StyledTableRow onClick={() => handleClick()}>
         <StyledTableCell align="center">
           <CardMedia
             component="img"
@@ -33,16 +30,12 @@ const TeamRow = ({ team }) => {
         </StyledTableCell>
         <StyledTableCell align="center">{team.name}</StyledTableCell>
         <StyledTableCell align="center">{team.owner_name}</StyledTableCell>
-        <StyledTableCell align="right">
-          <ColorButtonOutlined
-            size="small"
-            variant="outlined"
-            sx={{ margin: "6px 30px" }}
-            startIcon={<BarChartIcon />}
-            onClick={() => handleClick()}
-          >
-            Info
-          </ColorButtonOutlined>
+        <StyledTableCell align="center">
+          {!open ? (
+            <KeyboardArrowDownIcon fontSize="large" sx={{ marginTop: "8px" }} />
+          ) : (
+            <KeyboardArrowUpIcon fontSize="large" sx={{ marginTop: "8px" }} />
+          )}
         </StyledTableCell>
       </StyledTableRow>
       <StyledTableRow>
