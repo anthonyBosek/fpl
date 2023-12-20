@@ -57,6 +57,7 @@ def handle_404(error):
 #     return "Fantasy Eleven API"
 
 
+# frontend routes
 @app.route("/")
 @app.route("/auth")
 @app.route("/premier-league")
