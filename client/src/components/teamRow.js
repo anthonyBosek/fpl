@@ -7,13 +7,21 @@ import { StyledTableRow } from "./styledComponents/tableRow";
 import { ColorButtonOutlined } from "./styledComponents/colorBtnOutline";
 import StatBar from "./dataVisuals/barGraph";
 import { randomThumb } from "../utils/main";
+import PlayerCardSmall from "./playerCardSm";
 
 const TeamRow = ({ team }) => {
   const [open, setOpen] = useState(false);
+  // const [players, setPlayers] = useState(team.players);
 
   const handleClick = () => setOpen(!open);
+
+  const allPlayers = team.players.map((player) => (
+    <PlayerCardSmall key={`player-card-${player.id}`} ref_id={player.ref} />
+  ));
+
   return (
     <>
+      {/* {console.log(team)} */}
       <StyledTableRow>
         <StyledTableCell align="center">
           <CardMedia
@@ -47,7 +55,22 @@ const TeamRow = ({ team }) => {
                 background: "#f8f9fa",
                 borderRadius: "10px",
               }}
-            ></Box>
+            >
+              <div className="roster-grid">
+                <div className="roster-grid-label">Goalkeeper</div>
+                <div className="roster-grid-label">Defender</div>
+                <div className="roster-grid-label">Defender</div>
+                <div className="roster-grid-label">Defender</div>
+                <div className="roster-grid-label">Defender</div>
+                <div className="roster-grid-label">Midfielder</div>
+                <div className="roster-grid-label">Midfielder</div>
+                <div className="roster-grid-label">Midfielder</div>
+                <div className="roster-grid-label">Attacker</div>
+                <div className="roster-grid-label">Attacker</div>
+                <div className="roster-grid-label">Attacker</div>
+                {allPlayers}
+              </div>
+            </Box>
           </Collapse>
         </StyledTableCell>
       </StyledTableRow>

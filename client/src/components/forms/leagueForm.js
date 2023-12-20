@@ -34,25 +34,25 @@ const initialValues = {
   team_limit: 6,
 };
 
-const LeagueForm = ({ isNew, handleFormToggle }) => {
-  const { id } = useParams();
-  const navigate = useNavigate();
+const LeagueForm = ({ id, isNew, handleFormToggle }) => {
+  // const { id } = useParams();
+  // const navigate = useNavigate();
   const user = useSelector((state) => state.user.data);
   const [league, setLeague] = useState({});
 
-  // useEffect(() => {
-  //   const getLeague = async () => {
-  //     try {
-  //       const res = await axios.get(`/leagues/${id}`);
-  //       setLeague(res.data);
-  //     } catch (error) {
-  //       toast.error(error.message);
-  //     }
-  //   };
-  //   if (id) {
-  //     getLeague();
-  //   }
-  // }, [id]);
+  useEffect(() => {
+    const getLeague = async () => {
+      try {
+        const res = await axios.get(`/leagues/${id}`);
+        setLeague(res.data);
+      } catch (error) {
+        toast.error(error.message);
+      }
+    };
+    if (id) {
+      getLeague();
+    }
+  }, [id]);
 
   const handleFormSubmit = async (values) => {
     values.team_limit = parseInt(values.team_limit);
@@ -113,7 +113,7 @@ const LeagueForm = ({ isNew, handleFormToggle }) => {
   return (
     <Formik
       onSubmit={handleFormSubmit}
-      initialValues={initialValues}
+      initialValues={id ? league : initialValues}
       validationSchema={leagueSchema}
     >
       {({
@@ -125,6 +125,8 @@ const LeagueForm = ({ isNew, handleFormToggle }) => {
         handleSubmit,
       }) => (
         <Grid item sm={6}>
+          {console.log("league", league)}
+          {console.log("values", values)}
           <Card
             sx={{
               display: "flex",
@@ -272,7 +274,7 @@ const LeagueForm = ({ isNew, handleFormToggle }) => {
                     }}
                   >
                     <Button type="submit" size="small" variant="outlined">
-                      Add League
+                      {id ? "Update" : "Add"} League
                     </Button>
                   </Box>
                   <CardMedia

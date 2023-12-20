@@ -17,6 +17,7 @@ const TeamTable = ({ id }) => {
     const getLeague = async () => {
       try {
         const res = await axios.get(`/leagues/${id}`);
+        // console.log(res.data);
         setLeague(res.data);
         setTeams(res.data.teams);
       } catch (error) {

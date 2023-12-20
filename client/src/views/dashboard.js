@@ -24,33 +24,36 @@ const Dashboard = () => {
   const [teams, setTeams] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [isNew, setIsNew] = useState(true);
+  const [showEdit, setShowEdit] = useState(null);
 
   useEffect(() => {
-    console.log("user", user);
-    if (user?.id) {
-      setLeagues(user.leagues);
-      setTeams(user.teams);
-    }
-    // const getLeagues = async () => {
-    //   try {
-    //     const res = await axios.get("/leagues");
-    //     res.data.forEach((league) => (league.img = randomThumb("league")));
-    //     setLeagues(res.data);
-    //   } catch (error) {
-    //     toast.error(error.message);
-    //   }
-    // };
+    // console.log("user", user);
+    // if (user?.id) {
+    //   setLeagues(user.leagues);
+    //   setTeams(user.teams);
+    // }
+    const getLeagues = async () => {
+      try {
+        const res = await axios.get("/leagues");
+        res.data.forEach((league) => (league.img = randomThumb("league")));
+        setLeagues(res.data);
+      } catch (error) {
+        toast.error(error.message);
+      }
+    };
+    getLeagues();
+    // if (showEdit) getLeagues();
     // if (!isNew) getLeagues();
-    // const getTeams = async () => {
-    //   try {
-    //     const res = await axios.get("/teams");
-    //     setTeams(res.data);
-    //   } catch (error) {
-    //     toast.error(error.message);
-    //   }
-    // };
-    // getTeams();
-  }, []);
+    const getTeams = async () => {
+      try {
+        const res = await axios.get("/teams");
+        setTeams(res.data);
+      } catch (error) {
+        toast.error(error.message);
+      }
+    };
+    getTeams();
+  }, [isNew]);
 
   useEffect(() => {
     setIsNew(true);
@@ -63,7 +66,12 @@ const Dashboard = () => {
 
   // const handleFormToggle = () => navigate("/leagues/new");
 
-  const handleLeagueEdit = (id) => navigate(`/leagues/${id}/edit`);
+  const handleLeagueEdit = (id) => {
+    setIsNew(false);
+    setShowEdit(id);
+    console.log("edit league", id);
+    // navigate(`/leagues/${id}/edit`);
+  };
   // const handleLeagueEdit = (id) => navigate(`/leagues/${id}/edit`);
 
   const handleTeamAdd = (id) => navigate(`/leagues/${id}/teams/new`);
@@ -101,24 +109,27 @@ const Dashboard = () => {
   };
 
   const allLeagues = leagues?.map(
-    (league) => (
-      // league.manager_id === user?.id && (
-      <LeagueCard key={league.id} league={league} />
-    )
-    // )
+    (league) =>
+      league.manager_id === user?.id && (
+        <LeagueCard
+          key={league.id}
+          isOwn={true}
+          league={league}
+          handleLeagueEdit={handleLeagueEdit}
+        />
+      )
   );
 
   const allTeams = teams?.map(
-    (team) => (
-      // team.owner_id === user?.id && (
-      <TeamRow
-        key={team.id}
-        team={team}
-        handleTeamDisplay={handleTeamDisplay}
-        // handleDelete={handleTeamDelete}
-      />
-    )
-    // )
+    (team) =>
+      team.owner_id === user?.id && (
+        <TeamRow
+          key={team.id}
+          team={team}
+          handleTeamDisplay={handleTeamDisplay}
+          // handleDelete={handleTeamDelete}
+        />
+      )
   );
 
   return (
@@ -136,6 +147,13 @@ const Dashboard = () => {
       <Grid container spacing={5}>
         {showForm && (
           <LeagueForm isNew={isNew} handleFormToggle={handleFormToggle} />
+        )}
+        {showEdit && (
+          <LeagueForm
+            id={showEdit}
+            isNew={isNew}
+            handleFormToggle={handleFormToggle}
+          />
         )}
         {allLeagues}
       </Grid>

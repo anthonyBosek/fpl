@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
@@ -10,9 +11,12 @@ import { CardActionArea } from "@mui/material";
 import logo from "../assets/images/logo.png";
 import basic from "../assets/images/basic.png";
 
-const LeagueCard = ({ isOwn, league, handleLeagueView }) => {
+const LeagueCard = ({ isOwn, league, handleLeagueView, handleLeagueEdit }) => {
+  const user = useSelector((state) => state.user.data);
+
   return (
     <Grid item sm={6}>
+      {/* {console.log(user)} */}
       <Card
         sx={{
           display: "flex",
@@ -21,7 +25,7 @@ const LeagueCard = ({ isOwn, league, handleLeagueView }) => {
           backgroundColor: "#f8f9fa",
           boxShadow: "0 0 6px #381d54",
         }}
-        onClick={() => handleLeagueView(league.id)}
+        onClick={!isOwn ? () => handleLeagueView(league.id) : null}
       >
         <CardActionArea>
           <Box
@@ -132,7 +136,7 @@ const LeagueCard = ({ isOwn, league, handleLeagueView }) => {
                   justifyContent: "space-around",
                 }}
               >
-                {isOwn && (
+                {user && (
                   <>
                     <ColorButtonOutlined
                       size="small"
@@ -141,14 +145,16 @@ const LeagueCard = ({ isOwn, league, handleLeagueView }) => {
                     >
                       {isOwn ? "Add Team" : "Join League"}
                     </ColorButtonOutlined>
-                    <ColorButtonOutlined
-                      size="small"
-                      variant="outlined"
-                      // onClick={handleClick}
-                    >
-                      <EditIcon />
-                      Edit
-                    </ColorButtonOutlined>
+                    {isOwn && (
+                      <ColorButtonOutlined
+                        size="small"
+                        variant="outlined"
+                        onClick={() => handleLeagueEdit(league.id)}
+                      >
+                        <EditIcon />
+                        Edit
+                      </ColorButtonOutlined>
+                    )}
                   </>
                 )}
               </Box>

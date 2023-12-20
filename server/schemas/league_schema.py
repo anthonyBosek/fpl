@@ -29,7 +29,9 @@ class LeagueSchema(ma.SQLAlchemySchema):
         "UserSchema", exclude=("email", "teams", "leagues"), dump_only=True
     )
     teams = fields.List(
-        fields.Nested("TeamSchema", only=("id", "name", "owner_name"), dump_only=True)
+        fields.Nested(
+            "TeamSchema", only=("id", "name", "owner_name", "players"), dump_only=True
+        )
     )
     # players = fields.List(
     #     fields.Nested(
@@ -52,6 +54,7 @@ class LeaguesSchema(ma.SQLAlchemySchema):
             "team_limit",
             "manager_id",
             "manager_name",
+            # "players",
         ]
 
     name = fields.String(required=True, validate=validate.Length(min=2, max=100))
@@ -61,3 +64,10 @@ class LeaguesSchema(ma.SQLAlchemySchema):
     team_limit = fields.Integer(required=True, validate=validate.Range(min=4, max=10))
     manager_id = fields.Integer(required=True)
     manager_name = fields.String(dump_only=True)
+    # players = fields.List(
+    #     fields.Nested(
+    #         "PlayerSchema",
+    #         only=("id", "ref", "spot", "name", "position"),
+    #         dump_only=True,
+    #     )
+    # )

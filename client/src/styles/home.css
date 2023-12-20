@@ -42,6 +42,10 @@
   width: 200px;
   border-bottom: #f8f9fa 1px solid;
 }
+.line4 {
+  width: 200px;
+  border-bottom: #381d54 1px solid;
+}
 .end {
   border-bottom: 2px solid #333;
 }
@@ -117,7 +121,7 @@
   max-width: 70%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background-color: #f8f9fa;
 }
