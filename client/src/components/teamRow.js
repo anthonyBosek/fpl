@@ -8,7 +8,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { randomThumb } from "../utils/main";
 import PlayerCardSmall from "./playerCardSm";
 
-const TeamRow = ({ team }) => {
+const TeamRow = ({ team, league }) => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => setOpen(!open);
@@ -29,7 +29,9 @@ const TeamRow = ({ team }) => {
           />
         </StyledTableCell>
         <StyledTableCell align="center">{team.name}</StyledTableCell>
-        <StyledTableCell align="center">{team.owner_name}</StyledTableCell>
+        <StyledTableCell align="center">
+          {league ? league.name : team.owner_name}
+        </StyledTableCell>
         <StyledTableCell align="center">
           {!open ? (
             <KeyboardArrowDownIcon fontSize="large" sx={{ marginTop: "8px" }} />

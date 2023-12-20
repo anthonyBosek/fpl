@@ -20,6 +20,9 @@
   font-family: "Sriracha", cursive;
   text-decoration: none;
 }
+.hdr-lt {
+  width: 420px;
+}
 .hdr-lt img {
   height: 70px;
   width: 70px;

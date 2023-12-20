@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -10,7 +9,6 @@ import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import CardActionArea from "@mui/material/CardActionArea";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
@@ -18,25 +16,12 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import { ColorButtonOutlined } from "../styledComponents/colorBtnOutline";
-import EditIcon from "@mui/icons-material/Edit";
 import logo from "../../assets/images/logo.png";
 import basic from "../../assets/images/basic.png";
 import { getCookie, randomThumb } from "../../utils/main";
 import { Button } from "@mui/material";
 
-const leagueSchema = yup.object().shape({
-  name: yup.string().required("League name is required"),
-});
-
-const initialValues = {
-  name: "",
-  scored: "Head-To-Head",
-  team_limit: 6,
-};
-
-const LeagueForm = ({ id, isNew, handleFormToggle }) => {
-  // const { id } = useParams();
-  // const navigate = useNavigate();
+const LeagueForm = ({ id, manager, handleUpdate, handleLeagueFormToggle }) => {
   const user = useSelector((state) => state.user.data);
   const [league, setLeague] = useState({});
 
@@ -54,10 +39,20 @@ const LeagueForm = ({ id, isNew, handleFormToggle }) => {
     }
   }, [id]);
 
+  const leagueSchema = yup.object().shape({
+    name: yup.string().required("League name is required"),
+  });
+
+  const initialValues = {
+    name: id ? league.name : "",
+    scored: id ? league.scored : "Head-To-Head",
+    team_limit: id ? league.team_limit : "6",
+  };
+
   const handleFormSubmit = async (values) => {
     values.team_limit = parseInt(values.team_limit);
-    if (isNew) {
-      values.manager_id = user?.id;
+    values.manager_id = user.id;
+    if (!id) {
       try {
         const res = await axios({
           method: "POST",
@@ -68,15 +63,13 @@ const LeagueForm = ({ id, isNew, handleFormToggle }) => {
           },
           data: JSON.stringify(values),
         });
-        // navigate(`/users/${user.id}/dashboard/`);
-        handleFormToggle(false);
+        handleUpdate();
+        handleLeagueFormToggle();
         toast.success("League created");
       } catch (err) {
         toast.error(err.message);
       }
     } else {
-      delete values.manager_name;
-      delete values.manager;
       try {
         const res = await axios({
           method: "PATCH",
@@ -87,33 +80,20 @@ const LeagueForm = ({ id, isNew, handleFormToggle }) => {
           },
           data: JSON.stringify(values),
         });
-        // navigate(`/users/${user.id}/dashboard/`);
-        toast.success("League updated", {
-          duration: 4000,
-          // position: "top-right",
-          // style: {
-          //   border: "1px solid #333",
-          //   backgroundImage: "linear-gradient(to right, #f61a71, #ff311e)",
-          //   padding: "10px",
-          //   color: "#333",
-          // },
-        });
+        handleUpdate();
+        handleLeagueFormToggle(null);
+        toast.success("League updated");
       } catch (err) {
         toast.error(err.message);
       }
     }
   };
 
-  // const allMenuItems = PL_CLUBS.map(({ team }) => (
-  //   <MenuItem key={`menu-${team.id}`} value={team.code}>
-  //     {team.name}
-  //   </MenuItem>
-  // ));
-
   return (
     <Formik
       onSubmit={handleFormSubmit}
-      initialValues={id ? league : initialValues}
+      initialValues={initialValues}
+      enableReinitialize={true}
       validationSchema={leagueSchema}
     >
       {({
@@ -124,9 +104,7 @@ const LeagueForm = ({ id, isNew, handleFormToggle }) => {
         handleChange,
         handleSubmit,
       }) => (
-        <Grid item sm={6}>
-          {console.log("league", league)}
-          {console.log("values", values)}
+        <Grid item sm={12}>
           <Card
             sx={{
               display: "flex",
@@ -196,6 +174,7 @@ const LeagueForm = ({ id, isNew, handleFormToggle }) => {
                   >
                     <TextField
                       fullWidth
+                      autoFocus
                       type="text"
                       label="League Name"
                       onBlur={handleBlur}
@@ -211,7 +190,16 @@ const LeagueForm = ({ id, isNew, handleFormToggle }) => {
                     justifyContent="space-between"
                     marginTop="10px"
                   >
-                    <FormControl sx={{ width: "48%" }}>
+                    <Typography
+                      variant="subtitle1"
+                      color="text.secondary"
+                      component="div"
+                      fontFamily="Oswald"
+                      fontSize="1.5rem"
+                    >
+                      <b>Manager:</b> {manager}
+                    </Typography>
+                    <FormControl sx={{ width: "30%" }}>
                       <InputLabel id="scored">League Type</InputLabel>
                       <Select
                         labelId="scored"
@@ -226,7 +214,7 @@ const LeagueForm = ({ id, isNew, handleFormToggle }) => {
                         <MenuItem value="Total Points">Total Points</MenuItem>
                       </Select>
                     </FormControl>
-                    <FormControl sx={{ width: "48%" }}>
+                    <FormControl sx={{ width: "20%" }}>
                       <InputLabel id="team_limit">Number of Teams</InputLabel>
                       <Select
                         labelId="team_limit"
@@ -273,9 +261,9 @@ const LeagueForm = ({ id, isNew, handleFormToggle }) => {
                       justifyContent: "space-around",
                     }}
                   >
-                    <Button type="submit" size="small" variant="outlined">
+                    <ColorButtonOutlined type="submit">
                       {id ? "Update" : "Add"} League
-                    </Button>
+                    </ColorButtonOutlined>
                   </Box>
                   <CardMedia
                     component="img"

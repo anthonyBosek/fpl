@@ -21,17 +21,14 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user.data);
   const [leagues, setLeagues] = useState([]);
+  const [league, setLeague] = useState(null);
   const [teams, setTeams] = useState([]);
-  const [showForm, setShowForm] = useState(false);
-  const [isNew, setIsNew] = useState(true);
-  const [showEdit, setShowEdit] = useState(null);
+  const [team, setTeam] = useState(null);
+  const [showLeagueForm, setShowLeagueForm] = useState(false);
+  const [showTeamForm, setShowTeamForm] = useState(false);
+  const [updated, setUpdated] = useState(false);
 
   useEffect(() => {
-    // console.log("user", user);
-    // if (user?.id) {
-    //   setLeagues(user.leagues);
-    //   setTeams(user.teams);
-    // }
     const getLeagues = async () => {
       try {
         const res = await axios.get("/leagues");
@@ -42,8 +39,6 @@ const Dashboard = () => {
       }
     };
     getLeagues();
-    // if (showEdit) getLeagues();
-    // if (!isNew) getLeagues();
     const getTeams = async () => {
       try {
         const res = await axios.get("/teams");
@@ -53,30 +48,20 @@ const Dashboard = () => {
       }
     };
     getTeams();
-  }, [isNew]);
+  }, [updated]);
 
-  useEffect(() => {
-    setIsNew(true);
-  }, [leagues]);
+  const handleUpdate = () => setUpdated((prev) => !prev);
 
-  const handleFormToggle = (bool) => {
-    setShowForm((prev) => !prev);
-    setIsNew(bool);
-  };
+  // show form for league -- in form component user can create new league or edit existing league
+  const handleLeagueFormToggle = (bool) => setShowLeagueForm((prev) => !prev);
+  // set league to edit
+  const handleLeagueEdit = (id) =>
+    setLeague(id ? leagues.find((league) => league.id === id) : null);
 
-  // const handleFormToggle = () => navigate("/leagues/new");
-
-  const handleLeagueEdit = (id) => {
-    setIsNew(false);
-    setShowEdit(id);
-    console.log("edit league", id);
-    // navigate(`/leagues/${id}/edit`);
-  };
-  // const handleLeagueEdit = (id) => navigate(`/leagues/${id}/edit`);
-
-  const handleTeamAdd = (id) => navigate(`/leagues/${id}/teams/new`);
-
-  const handleTeamDisplay = (id) => navigate(`/teams/${id}/edit`);
+  // show form for team -- in form component user can create new team or edit existing team
+  const handleTeamFormToggle = (bool) => setShowTeamForm((prev) => !prev);
+  // set team to edit
+  const handleTeamEdit = (id) => {};
 
   const handleTeamDelete = (id) => {
     console.log("del team", id);
@@ -93,16 +78,11 @@ const Dashboard = () => {
         },
       });
       if (res.status === 200) {
-        try {
-          const res = await axios.get("/leagues");
-          setLeagues(res.data);
-          setTeams((prev) => prev.filter((team) => team.league_id !== id));
-        } catch (error) {
-          toast.error(error.message);
-        }
+        handleUpdate();
+        toast.success("League deleted");
+      } else {
+        toast.error("Unable to delete league, please try again");
       }
-      toast.success("League deleted");
-      navigate(`/users/${user?.id}/dashboard/`);
     } catch (error) {
       toast.error(error.message);
     }
@@ -116,6 +96,7 @@ const Dashboard = () => {
           isOwn={true}
           league={league}
           handleLeagueEdit={handleLeagueEdit}
+          handleLeagueDelete={handleLeagueDelete}
         />
       )
   );
@@ -126,8 +107,9 @@ const Dashboard = () => {
         <TeamRow
           key={team.id}
           team={team}
-          handleTeamDisplay={handleTeamDisplay}
-          // handleDelete={handleTeamDelete}
+          league={leagues.find((league) => league.id === team.league_id)}
+          handleTeamEdit={handleTeamEdit}
+          handleTeamDelete={handleTeamDelete}
         />
       )
   );
@@ -139,20 +121,25 @@ const Dashboard = () => {
         <ColorButtonOutlined
           size="small"
           variant="outlined"
-          onClick={handleFormToggle}
+          onClick={handleLeagueFormToggle}
         >
           Create League
         </ColorButtonOutlined>
       </div>
       <Grid container spacing={5}>
-        {showForm && (
-          <LeagueForm isNew={isNew} handleFormToggle={handleFormToggle} />
-        )}
-        {showEdit && (
+        {showLeagueForm && (
           <LeagueForm
-            id={showEdit}
-            isNew={isNew}
-            handleFormToggle={handleFormToggle}
+            manager={user?.username}
+            handleUpdate={handleUpdate}
+            handleLeagueFormToggle={handleLeagueFormToggle}
+          />
+        )}
+        {league && (
+          <LeagueForm
+            id={league.id}
+            manager={user?.username}
+            handleUpdate={handleUpdate}
+            handleLeagueFormToggle={handleLeagueEdit}
           />
         )}
         {allLeagues}
@@ -170,10 +157,10 @@ const Dashboard = () => {
             <TableRow>
               <StyledTableCell align="center" width="11%"></StyledTableCell>
               <StyledTableCell align="center" width="26%">
-                Team Name
+                Team
               </StyledTableCell>
               <StyledTableCell align="center" width="26%">
-                Owner Name
+                League
               </StyledTableCell>
               <StyledTableCell align="center" width="11%"></StyledTableCell>
             </TableRow>
