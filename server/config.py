@@ -12,15 +12,20 @@ import os
 
 load_dotenv()
 
-app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///fantasy11.db"
+app = Flask(
+    __name__,
+    static_url_path="",
+    static_folder="../client/build",
+    template_folder="../client/build",
+)
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URI")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SQLALCHEMY_ECHO"] = True
 app.secret_key = os.environ.get("APP_SECRET")
 app.config["JWT_SECRET_KEY"] = os.environ.get("JWT_SECRET_KEY")
 app.config["JWT_TOKEN_LOCATION"] = ["headers", "cookies", "json", "query_string"]
 #! In production, this should always be set to True
-app.config["JWT_COOKIE_SECURE"] = False
+app.config["JWT_COOKIE_SECURE"] = True
 #! Change time in production
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=12)
 #! Change time in production

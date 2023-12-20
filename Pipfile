@@ -17,6 +17,9 @@ sqlalchemy-serializer = "*"
 marshmallow-sqlalchemy = "*"
 werkzeug = "*"
 python-dotenv = "*"
+gunicorn = "*"
+psycopg2 = "*"
+faker = "*"
 
 [dev-packages]
 ipdb = "*"
