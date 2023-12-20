@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
         <div className="space">
           <Typography variant="body2" color="text.secondary" align="center">
-            Premier League & Fantasy Premier League
+            Premier League® - Fantasy Premier League™
           </Typography>
         </div>
       </div>

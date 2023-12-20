@@ -13,3 +13,32 @@
   text-align: center;
   border-bottom: 1px solid #e0e0e0;
 }
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 40px 235px;
+  gap: 10px;
+}
+.roster-grid-cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.cell-play {
+  width: 60%;
+}
+.cell-logo {
+  width: 50%;
+}
+.cell-name,
+.roster-grid-label {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.roster-grid-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

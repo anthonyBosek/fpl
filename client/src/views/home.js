@@ -1,4 +1,4 @@
-import "../styles/home.css";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import basic from "../assets/images/basic.png";
 import rainbow from "../assets/images/rainbow.webp";
@@ -10,8 +10,10 @@ import story1 from "../assets/images/articles/story1.webp";
 import story2 from "../assets/images/articles/story2.webp";
 import table from "../assets/images/articles/table.png";
 import { ColorButtonSolid } from "../components/styledComponents/colorBtnSolid";
+import "../styles/home.css";
 
 const Home = () => {
+  const nav = useNavigate();
   return (
     <div className="home">
       <div className="hero">
@@ -37,8 +39,10 @@ const Home = () => {
           >
             <img src={basic} alt="pl-link" className="pl-link-img" />
           </a>
+          <div className="line4"></div>
           <ColorButtonSolid
             sx={{ height: "150px", width: "400px", fontSize: "1.3rem" }}
+            onClick={() => nav("/auth")}
           >
             <img src={rainbow} alt="rainbow" className="fan-link-img" />
             Register Now & Play <br />
