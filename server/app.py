@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 from config import app, db, api, jwt
+from flask import render_template
 from werkzeug.exceptions import NotFound
 
 # models
@@ -51,9 +52,19 @@ def handle_404(error):
     return response, error.code
 
 
+# @app.route("/")
+# def index():
+#     return "Fantasy Eleven API"
+
+
+# frontend routes
 @app.route("/")
-def index():
-    return "Fantasy Eleven API"
+@app.route("/auth")
+@app.route("/premier-league")
+@app.route("/fantasy-league")
+@app.route("/users/<int:id>/dashboard")
+def index(id=0):
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
