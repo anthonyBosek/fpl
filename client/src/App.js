@@ -1,12 +1,12 @@
 import { useEffect, useCallback, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet, useNavigate } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
-// import { toast } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { clearErrors as clearUserErrors } from "./features/user/userSlice";
 import { fetchCurrentUser } from "./features/user/userSlice";
 import Header from "./components/header";
 import Nav from "./components/navbar";
+import Footer from "./components/footer";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const App = () => {
         const action = await dispatch(fetchCurrentUser());
         if (typeof action.payload !== "string") {
           if (action.payload.flag === "refresh") {
-            // console.log("refresh token", action.payload);
+            console.log("refresh token", action.payload);
           }
         } else {
           // console.log("error", action.payload);
@@ -34,11 +34,11 @@ const App = () => {
         }
       } else {
         // console.log("user", user);
-        // toast.success(`Welcome back ${user.username}!`);
         navigate(`/users/${user.id}/dashboard/`);
       }
     })();
   }, [user, dispatch, navigate]);
+
   useEffect(() => {
     if (errors.length) {
       clearErrorsAction();
@@ -53,6 +53,7 @@ const App = () => {
       <div className="outlet-container">
         <Outlet />
       </div>
+      <Footer />
     </>
   );
 };

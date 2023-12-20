@@ -202,7 +202,6 @@ const LeagueForm = ({ isNew, handleFormToggle }) => {
                       name="name"
                       error={!!touched.name && !!errors.name}
                       helperText={touched.name && errors.name}
-                      sx
                     />
                   </Typography>
                   <Box

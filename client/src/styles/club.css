@@ -13,6 +13,7 @@
 .club-view-info {
   clear: both;
   margin-top: 44px;
+  padding: 0 2rem;
   border-top: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
@@ -24,5 +25,6 @@
 }
 .club-view-est {
   font-family: "Oswald", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  padding-top: 10px;
 }

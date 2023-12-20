@@ -10,7 +10,6 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
-import FormHelperText from "@mui/material/FormHelperText";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -177,7 +176,6 @@ const Authentication = () => {
                             </MenuItem>
                             {allMenuItems}
                           </Select>
-                          {/* <FormHelperText></FormHelperText> */}
                         </FormControl>
                       </Grid>
                       <Grid item xs={12}>

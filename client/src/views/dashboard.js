@@ -26,19 +26,21 @@ const Dashboard = () => {
   const [isNew, setIsNew] = useState(true);
 
   useEffect(() => {
-    // console.log("user", user);
-    setLeagues(user?.leagues);
-    setTeams(user?.teams);
-    const getLeagues = async () => {
-      try {
-        const res = await axios.get("/leagues");
-        res.data.forEach((league) => (league.img = randomThumb("league")));
-        setLeagues(res.data);
-      } catch (error) {
-        toast.error(error.message);
-      }
-    };
-    if (!isNew) getLeagues();
+    console.log("user", user);
+    if (user?.id) {
+      setLeagues(user.leagues);
+      setTeams(user.teams);
+    }
+    // const getLeagues = async () => {
+    //   try {
+    //     const res = await axios.get("/leagues");
+    //     res.data.forEach((league) => (league.img = randomThumb("league")));
+    //     setLeagues(res.data);
+    //   } catch (error) {
+    //     toast.error(error.message);
+    //   }
+    // };
+    // if (!isNew) getLeagues();
     // const getTeams = async () => {
     //   try {
     //     const res = await axios.get("/teams");
@@ -48,7 +50,7 @@ const Dashboard = () => {
     //   }
     // };
     // getTeams();
-  }, [isNew]);
+  }, []);
 
   useEffect(() => {
     setIsNew(true);
@@ -99,22 +101,24 @@ const Dashboard = () => {
   };
 
   const allLeagues = leagues?.map(
-    (league) =>
-      league.manager_id === user?.id && (
-        <LeagueCard key={league.id} league={league} />
-      )
+    (league) => (
+      // league.manager_id === user?.id && (
+      <LeagueCard key={league.id} league={league} />
+    )
+    // )
   );
 
   const allTeams = teams?.map(
-    (team) =>
-      team.owner_id === user?.id && (
-        <TeamRow
-          key={team.id}
-          team={team}
-          handleTeamDisplay={handleTeamDisplay}
-          // handleDelete={handleTeamDelete}
-        />
-      )
+    (team) => (
+      // team.owner_id === user?.id && (
+      <TeamRow
+        key={team.id}
+        team={team}
+        handleTeamDisplay={handleTeamDisplay}
+        // handleDelete={handleTeamDelete}
+      />
+    )
+    // )
   );
 
   return (
@@ -130,9 +134,9 @@ const Dashboard = () => {
         </ColorButtonOutlined>
       </div>
       <Grid container spacing={5}>
-        {/* {showForm && (
+        {showForm && (
           <LeagueForm isNew={isNew} handleFormToggle={handleFormToggle} />
-        )} */}
+        )}
         {allLeagues}
       </Grid>
       <div className="dash-sub-title">Teams</div>
