@@ -10,7 +10,15 @@ const ClubCard = ({ team, venue, handleClubView }) => {
   return (
     <Grid item xs={12} sm={4}>
       <Card
-        sx={{ display: "flex", boxShadow: "0 0 6px #381d54" }}
+        sx={{
+          display: "flex",
+          boxShadow: "0 0 6px #381d54",
+          "&:hover": {
+            cursor: "pointer",
+            boxShadow: "0 0 6px #381d54",
+            transform: "scale(1.01)",
+          },
+        }}
         onClick={() => handleClubView(team.id)}
       >
         <CardActionArea>

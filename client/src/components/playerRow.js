@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Box, Collapse } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
-import BarChartIcon from "@mui/icons-material/BarChart";
 import { StyledTableCell } from "./styledComponents/tableCell";
 import { StyledTableRow } from "./styledComponents/tableRow";
-import { ColorButtonOutlined } from "./styledComponents/colorBtnOutline";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import StatBar from "./dataVisuals/barGraph";
 
 const PlayerRow = ({ player, team }) => {
@@ -14,7 +14,7 @@ const PlayerRow = ({ player, team }) => {
 
   return (
     <>
-      <StyledTableRow>
+      <StyledTableRow onClick={() => handleClick(player.id)}>
         <StyledTableCell align="center">
           <CardMedia
             component="img"
@@ -26,16 +26,12 @@ const PlayerRow = ({ player, team }) => {
         <StyledTableCell align="center">{player.name}</StyledTableCell>
         <StyledTableCell align="center">{player.position}</StyledTableCell>
         <StyledTableCell align="center">{player.number || "-"}</StyledTableCell>
-        <StyledTableCell align="right">
-          <ColorButtonOutlined
-            size="small"
-            variant="outlined"
-            sx={{ margin: "6px 30px" }}
-            startIcon={<BarChartIcon />}
-            onClick={() => handleClick(player.id)}
-          >
-            Info
-          </ColorButtonOutlined>
+        <StyledTableCell align="center">
+          {!open ? (
+            <KeyboardArrowDownIcon fontSize="large" sx={{ marginTop: "8px" }} />
+          ) : (
+            <KeyboardArrowUpIcon fontSize="large" sx={{ marginTop: "8px" }} />
+          )}
         </StyledTableCell>
       </StyledTableRow>
       <StyledTableRow>

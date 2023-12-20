@@ -27,6 +27,7 @@
 }
 .cell-play {
   width: 60%;
+  border-radius: 50%;
 }
 .cell-logo {
   width: 50%;
@@ -36,9 +37,12 @@
   font-family: "Oswald", sans-serif;
   font-size: 1.2rem;
   text-align: center;
+  color: #333;
 }
 .roster-grid-label {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 25px;
+  border-bottom: 1px solid #333;
 }

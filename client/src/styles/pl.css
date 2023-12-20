@@ -17,4 +17,16 @@
 .pos-sel {
   background: #381d54;
   color: white;
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+  padding: 4px;
+}
+#root
+  > div.outlet-container
+  > div
+  > div.MuiTableContainer-root.css-rorn0c-MuiTableContainer-root
+  > table
+  > tbody
+  td {
+  font-size: 20px;
 }

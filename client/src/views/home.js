@@ -50,7 +50,7 @@ const Home = () => {
           </ColorButtonSolid>
         </div>
       </div>
-      <div className="divider1"></div>
+      <div className="divider1" style={{ marginBottom: "60px" }}></div>
       <img src={hdr1} alt="article-1" className="article-img" />
       <section>
         <img src={story1} alt="story1" className="story-img left" />
@@ -119,7 +119,7 @@ const Home = () => {
         <div className="line3"></div>
         <img src={box2} alt="score2" className="score-img" />
       </div>
-      <div className="divider2"></div>
+      <div className="divider2" style={{ marginBottom: "60px" }}></div>
       <img src={hdr2} alt="article-1" className="article-img" />
       <section>
         <img src={story2} alt="story2" className="story-img right" />
