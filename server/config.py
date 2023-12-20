@@ -27,6 +27,7 @@ app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=12)
 app.config["JWT_REFRESH_TOKEN_EXPIRES"] = timedelta(days=1)
 #! Restricts JWT to https protocols only
 #! app.config["JWT_COOKIE_CSRF_PROTECT"] = True
+#! app.config["PROPAGATE_EXCEPTIONS"] = True
 CORS(app)
 
 db = SQLAlchemy(app)
