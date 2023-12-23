@@ -58,7 +58,7 @@ const initialValuesLogin = {
 
 const Authentication = () => {
   const dispatch = useDispatch();
-  const [isReg, setIsReg] = useState(false);
+  const [isReg, setIsReg] = useState(true);
 
   const url = isReg ? "/auth/register" : "/auth/login";
 
