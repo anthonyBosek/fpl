@@ -2,7 +2,7 @@
 
 Robust Fantasy Premier League Application built on Flask w/ Python Server & React Frontend.
 
-Jump directly to the deployed application here: [fantasy-eleven](https://fantasy-eleven.onrender.com/). **Temporarily unavailable**
+Jump directly to the deployed application here: [fantasy-eleven](). **Temporarily unavailable!**
 
 ---
 
