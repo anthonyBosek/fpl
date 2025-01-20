@@ -14,7 +14,7 @@ A Robust Fantasy Premier League Application built on a Flask/Python Server & uti
 4. Run `pipenv shell` to create virtual environment
 5. From the main project directory, run `cd server` to enter the server directory
 
-### .env set up
+### Set up .env file
 
 6. Create `.env` file in the server directory with `touch .env`
 7. Add a line for `SECRET_KEY=`
