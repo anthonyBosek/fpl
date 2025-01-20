@@ -1,8 +1,8 @@
 # Fantasy Premier League
 
-Robust Fantasy Premier League Application built on Flask w/ Python Server & React Frontend.
+A Robust Fantasy Premier League Application built on a Flask/Python Server & utilizing a React Frontend.
 
-Jump directly to the deployed application here: [fantasy-eleven](). **-- Temporarily unavailable! --**
+<s>Jump directly to the deployed application here: [fantasy-eleven]().</s> **-- Temporarily unavailable! --**
 
 ---
 
