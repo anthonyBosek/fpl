@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
+# Seeding script for database
 
 from random import randint, choice as rc
 
 # faker import
 from faker import Faker
 
-from rosters import ROSTERS
+from server.rosters import ROSTERS
 
 from config import app, db
 from models.league_player import LeaguePlayer
