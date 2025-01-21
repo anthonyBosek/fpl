@@ -1,3 +1,5 @@
+# Mock data for football rosters
+
 ROSTERS = [
     {
         "team": {

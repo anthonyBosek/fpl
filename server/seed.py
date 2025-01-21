@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Seeding script for database
 
 from random import randint, choice as rc
 
