@@ -1,3 +1,4 @@
+# Schema for Team model
 from marshmallow import fields, validate
 from config import ma
 from models.team import Team
