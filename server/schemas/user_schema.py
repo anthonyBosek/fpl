@@ -1,3 +1,4 @@
+# Schema for User model
 from marshmallow import fields, validate
 from config import ma
 from models.user import User

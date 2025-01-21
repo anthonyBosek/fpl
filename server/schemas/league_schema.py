@@ -1,3 +1,4 @@
+# Schema for League model
 from marshmallow import fields, validate
 from config import ma
 from models.league import League

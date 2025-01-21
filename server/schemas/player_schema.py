@@ -1,3 +1,4 @@
+# Schema for Player model
 from marshmallow import fields, validate
 from config import ma
 from models.player import Player
