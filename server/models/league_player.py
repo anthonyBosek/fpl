@@ -1,3 +1,4 @@
+# LeaguePlayer model
 from sqlalchemy.orm import validates
 from config import db
 from models.league import League
