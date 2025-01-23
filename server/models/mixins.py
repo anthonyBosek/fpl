@@ -1,3 +1,5 @@
+# TimestampMixin: A mixin class for adding created_at and updated_at fields to a model
+
 from config import db
 
 
