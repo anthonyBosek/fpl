@@ -1,3 +1,4 @@
+# Player model
 from sqlalchemy.orm import validates
 from config import db
 from sqlalchemy.ext.associationproxy import association_proxy
