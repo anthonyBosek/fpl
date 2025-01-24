@@ -1,4 +1,6 @@
 #! /usr/bin/env python3
+# server/app.py
+# python/flask microservice
 
 from config import app, db, api, jwt
 from flask import render_template
