@@ -2,7 +2,7 @@
 
 A Robust Fantasy Premier League Application built on a Flask/Python Server & utilizing a React Frontend.
 
-<s>Jump directly to the deployed application here: [fantasy-eleven]().</s> **-- Temporarily unavailable! --**
+<!-- <s>Jump directly to the deployed application here: [fantasy-eleven]().</s> **-- Temporarily unavailable! --** -->
 
 ---
 
