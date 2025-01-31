@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # Seeding script for database
+# Use this script to seed your database with initial data. This data may be out of date.
 
 from random import randint, choice as rc
 
