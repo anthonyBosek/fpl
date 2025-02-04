@@ -1,3 +1,5 @@
+// react-router-dom v6
+
 import App from "./App";
 import Error from "./views/error";
 import Home from "./views/home";
