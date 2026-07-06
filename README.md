@@ -1,6 +1,6 @@
 # Fantasy Premier League
 
-A Robust Fantasy Premier League Application built on a Flask/Python Server & utilizing a React Frontend.
+A robust Fantasy Premier League application built on a Flask/Python Server & utilizing a React Frontend.
 
 <!-- <s>Jump directly to the deployed application here: [fantasy-eleven]().</s> **-- Temporarily unavailable! --** -->
 
@@ -56,3 +56,4 @@ Copyright (c) 2023
 [RapidAPI-sports](https://rapidapi.com/api-sports/api/api-football/)<br>
 [Securing your session key](https://morgvanny.com/securing-your-session-key-in-flask/)<br>
 [Create a Flask application with Google Login](https://realpython.com/flask-google-login/)
+
